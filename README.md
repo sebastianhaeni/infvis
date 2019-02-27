@@ -1,3 +1,6 @@
+---
+permalink: /index.html
+---
 # InfVis - Information Visualization
 Information Visualization of a large Code Basis
 
