@@ -82,3 +82,8 @@ Radian dendrogram
 <https://observablehq.com/@d3/d3-radial-dendrogram>
 
 Displays the folder structure / tree structure in an interesting way that allows the viewer to dive into folders visually.
+
+# Notes
+
+* <https://codescene.io/projects/168/jobs/11346/results/code/hotspots/system-map>
+* <http://mbostock.github.io/d3/talk/20111116/pack-hierarchy.html>
