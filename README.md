@@ -9,9 +9,18 @@ Information Visualization of a large code base
 
 The world becomes more and more driven by software. Thera are a lot of huge software intensive systems which have to be maintained and extended. A software intensive system is a special product. The single material it is made of, is source code. Therefore it exists only virtually. Often dozens of developers work on a system and it is difficult to keep track of it. Which components are regularly adapted? What should quality assurance focus on? In which areas should technical debt be reduced?
 
-This project aims to visualize development activities, applied to the source code of a software intensive system, over time. To achieve this goal, the VCS history (Git) will be mined to extract file manipulations. As a large code base contains thousands to millions of files, they are aggregated on the file system level (directory structure). To enable further drilldown, into an interesting aggregate, a treemap will be provided.
+This project aims to visualize development activities, applied to the source code of a software intensive system, over time. To achieve this goal, the systems version control system (VCS) history will be mined to extract file manipulations. As a large code base contains thousands to millions of files, they are aggregated on the file system level (directory structure). To enable further drilldown, into an interesting aggregate, a treemap will be provided.
 
-The following tools will be used:
+The data used to create the graphics are taken from a commercial software system written in C# and its git based VCS. The software system consists of around 50k lines of code, 4.5k files and 9k commits. A git based VCS records changes to a set of files over time. Each increment of changes to one or more files is called a commit. The following information will be extracted from every commit in the VCS history:
+
+* Commit Date
+* Path of file¹
+* LinesAdded¹
+* LinesDeleted¹
+
+¹ per file in this commit
+
+Tools to be used:
 
 * VCS mining: C#, .NET Framework, libgit2sharp
 * Visualization: JavaScript, D3.js
