@@ -47,10 +47,8 @@ namespace GitDataExtractor.Miner
             foreach (LibGit2Sharp.PatchEntryChanges patchEntryChanges in commitAggregate.Changes)
             {
                 commit.AddFile(patchEntryChanges.Path, patchEntryChanges.LinesAdded, patchEntryChanges.LinesDeleted, patchEntryChanges.Status.ToString("G"));
-                Statistics.ProcessedFiles++;
             }
 
-            Statistics.ProcessedCommits++;
             return commit;
         }
 

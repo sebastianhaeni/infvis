@@ -1,11 +1,13 @@
-namespace GitDataExtractor
+public class Configuration
 {
-    public static class Configuration
-    {
-        public const string RepositoryDirectory = @"C:\repos\a";
+    private static readonly Configuration _instance = new Configuration();
 
-        public const string LogFilePath = @"C:\temp\gitHistory.log";
+    private Configuration()
+    { }
 
-        public const string CommitHistoryFilePath = @"C:\temp\history.json";
-    }
+    public static Configuration Instance => _instance;
+
+    public string RepositoryDirectory { get; set; }
+
+    public string CommitHistoryFilePath { get; set; }
 }

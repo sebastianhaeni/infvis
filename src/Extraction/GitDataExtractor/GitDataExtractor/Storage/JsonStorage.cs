@@ -8,6 +8,6 @@ namespace GitDataExtractor.Storage
 {
     internal class JsonStorage : IDataStorage
     {
-        public void Save(IEnumerable<Commit> history) => File.WriteAllText(Configuration.CommitHistoryFilePath, JsonConvert.SerializeObject(history, Formatting.None));
+        public void Save(IEnumerable<Commit> history) => File.WriteAllText(Configuration.Instance.CommitHistoryFilePath, JsonConvert.SerializeObject(history, Formatting.None));
     }
 }
