@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using GitDataExtractor.Miner.Abstraction;
 
 namespace GitDataExtractor.Model
 {

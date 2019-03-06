@@ -1,5 +1,3 @@
-using GitDataExtractor.Miner.Abstraction;
-
 namespace GitDataExtractor.Model
 {
     public class CommitFile
