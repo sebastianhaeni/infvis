@@ -1,0 +1,10 @@
+{
+    "entries": [
+        {
+            "name": "example.js",
+            "size": 55,
+            "group": "ProjectA/package1",
+            "lineChanges": [0,0,0,0,0,10,20,25,20,20,20,20,20,0,0,0,0]
+        }
+    ]
+}
