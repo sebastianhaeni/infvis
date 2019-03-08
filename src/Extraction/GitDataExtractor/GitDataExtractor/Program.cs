@@ -23,8 +23,6 @@ namespace GitDataExtractor
 
             IDataStorage storage = new JsonStorage();
 
-            GetValidExecutionOption();
-
             int toExecute = GetValidExecutionOption();
             switch (toExecute)
             {
