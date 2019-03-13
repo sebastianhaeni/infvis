@@ -1,0 +1,372 @@
+[
+    {
+        "Files": [
+            {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Abstraction/IDataStorage.cs",
+                "LinesAdded": 3,
+                "LinesDeleted": 1,
+                "Status": "Renamed"
+            },
+            {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Aggregator/HistoryAggregator.cs",
+                "LinesAdded": 53,
+                "LinesDeleted": 0,
+                "Status": "Added"
+            },
+            {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Configuration.cs",
+                "LinesAdded": 8,
+                "LinesDeleted": 8,
+                "Status": "Modified"
+            },
+            {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/GitDataExtractor.csproj",
+                "LinesAdded": 0,
+                "LinesDeleted": 4,
+                "Status": "Modified"
+            },
+            {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Miner/GitClient.cs",
+                "LinesAdded": 1,
+                "LinesDeleted": 1,
+                "Status": "Modified"
+            },
+            {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Miner/GitHistoryExtractor.cs",
+                "LinesAdded": 1,
+                "LinesDeleted": 1,
+                "Status": "Modified"
+            },
+            {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Model/CommitFile.cs",
+                "LinesAdded": 0,
+                "LinesDeleted": 2,
+                "Status": "Modified"
+            },
+            {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Model/MinedCommitRecord.cs",
+                "LinesAdded": 0,
+                "LinesDeleted": 1,
+                "Status": "Modified"
+            },
+            {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Program.cs",
+                "LinesAdded": 57,
+                "LinesDeleted": 25,
+                "Status": "Modified"
+            },
+            {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Storage/JsonStorage.cs",
+                "LinesAdded": 5,
+                "LinesDeleted": 3,
+                "Status": "Modified"
+            },
+            {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/appsettings.json",
+                "LinesAdded": 3,
+                "LinesDeleted": 3,
+                "Status": "Modified"
+            }
+        ],
+        "Message": "Fix history mining bug",
+        "LinesAdded": 131,
+        "LinesDeleted": 49,
+        "Date": "2019-03-06T10:59:17Z"
+    },
+    {
+        "Files": [
+            {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Miner/GitClient.cs",
+                "LinesAdded": 9,
+                "LinesDeleted": 7,
+                "Status": "Modified"
+            }
+        ],
+        "Message": "Introduce configuration file and simplified code.",
+        "LinesAdded": 9,
+        "LinesDeleted": 7,
+        "Date": "2019-03-06T10:58:57Z"
+    },
+    {
+        "Files": [
+            {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Configuration.cs",
+                "LinesAdded": 10,
+                "LinesDeleted": 8,
+                "Status": "Modified"
+            },
+            {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/GitDataExtractor.csproj",
+                "LinesAdded": 18,
+                "LinesDeleted": 0,
+                "Status": "Modified"
+            },
+            {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Logger.cs",
+                "LinesAdded": 0,
+                "LinesDeleted": 14,
+                "Status": "Deleted"
+            },
+            {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Miner/GitHistoryExtractor.cs",
+                "LinesAdded": 0,
+                "LinesDeleted": 2,
+                "Status": "Modified"
+            },
+            {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Program.cs",
+                "LinesAdded": 12,
+                "LinesDeleted": 6,
+                "Status": "Modified"
+            },
+            {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Statistics.cs",
+                "LinesAdded": 0,
+                "LinesDeleted": 16,
+                "Status": "Deleted"
+            },
+            {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Storage/JsonStorage.cs",
+                "LinesAdded": 3,
+                "LinesDeleted": 3,
+                "Status": "Modified"
+            },
+            {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/appsettings.json",
+                "LinesAdded": 4,
+                "LinesDeleted": 0,
+                "Status": "Added"
+            }
+        ],
+        "Message": "Add appsettings.override.json to gitignore.",
+        "LinesAdded": 47,
+        "LinesDeleted": 49,
+        "Date": "2019-03-06T10:57:58Z"
+    },
+    {
+        "Files": [
+            {
+                "FilePath": ".gitignore",
+                "LinesAdded": 4,
+                "LinesDeleted": 1,
+                "Status": "Modified"
+            }
+        ],
+        "Message": "add git history data extractor",
+        "LinesAdded": 4,
+        "LinesDeleted": 1,
+        "Date": "2019-03-06T09:09:52Z"
+    },
+    {
+        "Files": [
+            {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor.sln",
+                "LinesAdded": 25,
+                "LinesDeleted": 0,
+                "Status": "Added"
+            },
+            {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Configuration.cs",
+                "LinesAdded": 11,
+                "LinesDeleted": 0,
+                "Status": "Added"
+            },
+            {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/GitDataExtractor.csproj",
+                "LinesAdded": 17,
+                "LinesDeleted": 0,
+                "Status": "Added"
+            },
+            {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Logger.cs",
+                "LinesAdded": 14,
+                "LinesDeleted": 0,
+                "Status": "Added"
+            },
+            {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Miner/Abstraction/IDataStorage.cs",
+                "LinesAdded": 10,
+                "LinesDeleted": 0,
+                "Status": "Added"
+            },
+            {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Miner/GitClient.cs",
+                "LinesAdded": 37,
+                "LinesDeleted": 0,
+                "Status": "Added"
+            },
+            {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Miner/GitHistoryExtractor.cs",
+                "LinesAdded": 63,
+                "LinesDeleted": 0,
+                "Status": "Added"
+            },
+            {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Model/CommitAggregate.cs",
+                "LinesAdded": 11,
+                "LinesDeleted": 0,
+                "Status": "Added"
+            },
+            {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Model/CommitFile.cs",
+                "LinesAdded": 15,
+                "LinesDeleted": 0,
+                "Status": "Added"
+            },
+            {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Model/MinedCommitRecord.cs",
+                "LinesAdded": 32,
+                "LinesDeleted": 0,
+                "Status": "Added"
+            },
+            {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Program.cs",
+                "LinesAdded": 20,
+                "LinesDeleted": 0,
+                "Status": "Added"
+            },
+            {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Statistics.cs",
+                "LinesAdded": 16,
+                "LinesDeleted": 0,
+                "Status": "Added"
+            },
+            {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Storage/JsonStorage.cs",
+                "LinesAdded": 13,
+                "LinesDeleted": 0,
+                "Status": "Added"
+            }
+        ],
+        "Message": "add visual studio gitignore config",
+        "LinesAdded": 284,
+        "LinesDeleted": 0,
+        "Date": "2019-03-03T18:41:28Z"
+    },
+    {
+        "Files": [
+            {
+                "FilePath": ".gitignore",
+                "LinesAdded": 346,
+                "LinesDeleted": 0,
+                "Status": "Modified"
+            }
+        ],
+        "Message": "add notes",
+        "LinesAdded": 346,
+        "LinesDeleted": 0,
+        "Date": "2019-03-02T16:11:38Z"
+    },
+    {
+        "Files": [
+            {
+                "FilePath": "README.md",
+                "LinesAdded": 5,
+                "LinesDeleted": 0,
+                "Status": "Modified"
+            }
+        ],
+        "Message": "add used data.",
+        "LinesAdded": 5,
+        "LinesDeleted": 0,
+        "Date": "2019-03-02T16:11:31Z"
+    },
+    {
+        "Files": [
+            {
+                "FilePath": "README.md",
+                "LinesAdded": 11,
+                "LinesDeleted": 2,
+                "Status": "Modified"
+            }
+        ],
+        "Message": "fix typos",
+        "LinesAdded": 11,
+        "LinesDeleted": 2,
+        "Date": "2019-02-28T09:09:45Z"
+    },
+    {
+        "Files": [
+            {
+                "FilePath": "README.md",
+                "LinesAdded": 7,
+                "LinesDeleted": 7,
+                "Status": "Modified"
+            }
+        ],
+        "Message": "Added complete abstract and restructured the document.",
+        "LinesAdded": 7,
+        "LinesDeleted": 7,
+        "Date": "2019-02-27T22:00:10Z"
+    },
+    {
+        "Files": [
+            {
+                "FilePath": "README.md",
+                "LinesAdded": 41,
+                "LinesDeleted": 20,
+                "Status": "Modified"
+            }
+        ],
+        "Message": "add permalink to README.md so GH Pages displays it",
+        "LinesAdded": 41,
+        "LinesDeleted": 20,
+        "Date": "2019-02-27T12:20:03Z"
+    },
+    {
+        "Files": [
+            {
+                "FilePath": "README.md",
+                "LinesAdded": 3,
+                "LinesDeleted": 0,
+                "Status": "Modified"
+            }
+        ],
+        "Message": "update .editorconfig",
+        "LinesAdded": 3,
+        "LinesDeleted": 0,
+        "Date": "2019-02-27T12:19:46Z"
+    },
+    {
+        "Files": [
+            {
+                "FilePath": ".editorconfig",
+                "LinesAdded": 12,
+                "LinesDeleted": 0,
+                "Status": "Modified"
+            }
+        ],
+        "Message": "add .editorconfig",
+        "LinesAdded": 12,
+        "LinesDeleted": 0,
+        "Date": "2019-02-27T12:09:28Z"
+    },
+    {
+        "Files": [
+            {
+                "FilePath": ".gitignore",
+                "LinesAdded": 44,
+                "LinesDeleted": 0,
+                "Status": "Added"
+            }
+        ],
+        "Message": "update README.md to lay out the plan",
+        "LinesAdded": 44,
+        "LinesDeleted": 0,
+        "Date": "2019-02-27T12:09:03Z"
+    },
+    {
+        "Files": [
+            {
+                "FilePath": "README.md",
+                "LinesAdded": 50,
+                "LinesDeleted": 1,
+                "Status": "Modified"
+            }
+        ],
+        "Message": "Initial commit",
+        "LinesAdded": 50,
+        "LinesDeleted": 1,
+        "Date": "2019-02-27T10:52:39Z"
+    }
+]

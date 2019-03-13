@@ -1,0 +1,21 @@
+{
+    "name": "visualization",
+    "version": "1.0.0",
+    "description": "Visualization of a large code base",
+    "license": "UNLICENSED",
+    "scripts": {
+        "start": "parcel index.html",
+        "build": "parcel build index.html",
+        "lint": "tslint --project tsconfig.json"
+    },
+    "devDependencies": {
+        "@types/d3": "^5.7.1",
+        "parcel-bundler": "^1.11.0",
+        "sass": "^1.17.2",
+        "tslint": "^5.13.1",
+        "typescript": "^3.3.3333"
+    },
+    "dependencies": {
+        "d3": "^5.9.1"
+    }
+}
