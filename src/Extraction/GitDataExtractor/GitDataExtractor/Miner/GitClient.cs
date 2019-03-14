@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using GitDataExtractor.Model;
+using GitDataExtractor.Models.Mining;
 using LibGit2Sharp;
 
 namespace GitDataExtractor.Miner

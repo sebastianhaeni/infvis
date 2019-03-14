@@ -10,4 +10,6 @@ public class Configuration
     public string RepositoryDirectory { get; set; }
 
     public string CommitHistoryFilePath { get; set; }
+
+    public string AggregateFilePath { get; set; }
 }

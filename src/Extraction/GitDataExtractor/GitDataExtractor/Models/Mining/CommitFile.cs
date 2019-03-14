@@ -1,4 +1,4 @@
-namespace GitDataExtractor.Model
+namespace GitDataExtractor.Models.Mining
 {
     public class CommitFile
     {

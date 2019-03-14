@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
-using GitDataExtractor.Abstraction;
-using GitDataExtractor.Model;
+using GitDataExtractor.Miner.Abstraction;
+using GitDataExtractor.Models.Mining;
 
 namespace GitDataExtractor.Miner
 {
@@ -9,12 +9,9 @@ namespace GitDataExtractor.Miner
     {
         private int _counter;
 
-        private readonly IDataStorage _storage;
+        private readonly IHistoryStorage _storage;
 
-        public GitHistoryExtractor(IDataStorage storage)
-        {
-            _storage = storage;
-        }
+        public GitHistoryExtractor(IHistoryStorage storage) => _storage = storage;
 
         public void Run()
         {

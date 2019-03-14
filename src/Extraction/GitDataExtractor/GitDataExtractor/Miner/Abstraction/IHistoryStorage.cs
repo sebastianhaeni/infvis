@@ -1,9 +1,9 @@
 using System.Collections.Generic;
-using GitDataExtractor.Model;
+using GitDataExtractor.Models.Mining;
 
-namespace GitDataExtractor.Abstraction
+namespace GitDataExtractor.Miner.Abstraction
 {
-    public interface IDataStorage
+    public interface IHistoryStorage
     {
         void Save(IEnumerable<Commit> history);
 
