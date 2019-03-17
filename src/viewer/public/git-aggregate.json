@@ -1,0 +1,411 @@
+[
+    {
+        "StartTime": "2019-03-02T10:52:39Z",
+        "EndTime": "2019-03-03T10:52:39Z",
+        "Elements": {
+            "src/Extraction/GitDataExtractor/GitDataExtractor/Configuration.cs": {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Configuration.cs",
+                "AbsoluteLinesDelta": 11,
+                "RelativeLinesDelta": 11,
+                "LinesOfCode": 11,
+                "LinesAdded": 11,
+                "LinesDeleted": 0
+            },
+            "src/Extraction/GitDataExtractor/GitDataExtractor/Logger.cs": {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Logger.cs",
+                "AbsoluteLinesDelta": 14,
+                "RelativeLinesDelta": 14,
+                "LinesOfCode": 14,
+                "LinesAdded": 14,
+                "LinesDeleted": 0
+            },
+            "src/Extraction/GitDataExtractor/GitDataExtractor/Miner/Abstraction/IDataStorage.cs": {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Miner/Abstraction/IDataStorage.cs",
+                "AbsoluteLinesDelta": 10,
+                "RelativeLinesDelta": 10,
+                "LinesOfCode": 10,
+                "LinesAdded": 10,
+                "LinesDeleted": 0
+            },
+            "src/Extraction/GitDataExtractor/GitDataExtractor/Miner/GitClient.cs": {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Miner/GitClient.cs",
+                "AbsoluteLinesDelta": 37,
+                "RelativeLinesDelta": 37,
+                "LinesOfCode": 37,
+                "LinesAdded": 37,
+                "LinesDeleted": 0
+            },
+            "src/Extraction/GitDataExtractor/GitDataExtractor/Miner/GitHistoryExtractor.cs": {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Miner/GitHistoryExtractor.cs",
+                "AbsoluteLinesDelta": 63,
+                "RelativeLinesDelta": 63,
+                "LinesOfCode": 63,
+                "LinesAdded": 63,
+                "LinesDeleted": 0
+            },
+            "src/Extraction/GitDataExtractor/GitDataExtractor/Model/CommitAggregate.cs": {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Model/CommitAggregate.cs",
+                "AbsoluteLinesDelta": 11,
+                "RelativeLinesDelta": 11,
+                "LinesOfCode": 11,
+                "LinesAdded": 11,
+                "LinesDeleted": 0
+            },
+            "src/Extraction/GitDataExtractor/GitDataExtractor/Model/CommitFile.cs": {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Model/CommitFile.cs",
+                "AbsoluteLinesDelta": 15,
+                "RelativeLinesDelta": 15,
+                "LinesOfCode": 15,
+                "LinesAdded": 15,
+                "LinesDeleted": 0
+            },
+            "src/Extraction/GitDataExtractor/GitDataExtractor/Model/MinedCommitRecord.cs": {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Model/MinedCommitRecord.cs",
+                "AbsoluteLinesDelta": 32,
+                "RelativeLinesDelta": 32,
+                "LinesOfCode": 32,
+                "LinesAdded": 32,
+                "LinesDeleted": 0
+            },
+            "src/Extraction/GitDataExtractor/GitDataExtractor/Program.cs": {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Program.cs",
+                "AbsoluteLinesDelta": 20,
+                "RelativeLinesDelta": 20,
+                "LinesOfCode": 20,
+                "LinesAdded": 20,
+                "LinesDeleted": 0
+            },
+            "src/Extraction/GitDataExtractor/GitDataExtractor/Statistics.cs": {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Statistics.cs",
+                "AbsoluteLinesDelta": 16,
+                "RelativeLinesDelta": 16,
+                "LinesOfCode": 16,
+                "LinesAdded": 16,
+                "LinesDeleted": 0
+            },
+            "src/Extraction/GitDataExtractor/GitDataExtractor/Storage/JsonStorage.cs": {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Storage/JsonStorage.cs",
+                "AbsoluteLinesDelta": 13,
+                "RelativeLinesDelta": 13,
+                "LinesOfCode": 13,
+                "LinesAdded": 13,
+                "LinesDeleted": 0
+            }
+        }
+    },
+    {
+        "StartTime": "2019-03-03T10:52:39Z",
+        "EndTime": "2019-03-04T10:52:39Z",
+        "Elements": {}
+    },
+    {
+        "StartTime": "2019-03-04T10:52:39Z",
+        "EndTime": "2019-03-05T10:52:39Z",
+        "Elements": {
+            "src/Extraction/GitDataExtractor/GitDataExtractor/Configuration.cs": {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Configuration.cs",
+                "AbsoluteLinesDelta": 18,
+                "RelativeLinesDelta": 2,
+                "LinesOfCode": 13,
+                "LinesAdded": 10,
+                "LinesDeleted": 8
+            },
+            "src/Extraction/GitDataExtractor/GitDataExtractor/Logger.cs": {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Logger.cs",
+                "AbsoluteLinesDelta": 14,
+                "RelativeLinesDelta": -14,
+                "LinesOfCode": 0,
+                "LinesAdded": 0,
+                "LinesDeleted": 14
+            },
+            "src/Extraction/GitDataExtractor/GitDataExtractor/Miner/GitHistoryExtractor.cs": {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Miner/GitHistoryExtractor.cs",
+                "AbsoluteLinesDelta": 2,
+                "RelativeLinesDelta": -2,
+                "LinesOfCode": 61,
+                "LinesAdded": 0,
+                "LinesDeleted": 2
+            },
+            "src/Extraction/GitDataExtractor/GitDataExtractor/Program.cs": {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Program.cs",
+                "AbsoluteLinesDelta": 18,
+                "RelativeLinesDelta": 6,
+                "LinesOfCode": 26,
+                "LinesAdded": 12,
+                "LinesDeleted": 6
+            },
+            "src/Extraction/GitDataExtractor/GitDataExtractor/Statistics.cs": {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Statistics.cs",
+                "AbsoluteLinesDelta": 16,
+                "RelativeLinesDelta": -16,
+                "LinesOfCode": 0,
+                "LinesAdded": 0,
+                "LinesDeleted": 16
+            },
+            "src/Extraction/GitDataExtractor/GitDataExtractor/Storage/JsonStorage.cs": {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Storage/JsonStorage.cs",
+                "AbsoluteLinesDelta": 6,
+                "RelativeLinesDelta": 0,
+                "LinesOfCode": 13,
+                "LinesAdded": 3,
+                "LinesDeleted": 3
+            }
+        }
+    },
+    {
+        "StartTime": "2019-03-05T10:52:39Z",
+        "EndTime": "2019-03-06T10:52:39Z",
+        "Elements": {
+            "src/Extraction/GitDataExtractor/GitDataExtractor/Miner/GitClient.cs": {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Miner/GitClient.cs",
+                "AbsoluteLinesDelta": 16,
+                "RelativeLinesDelta": 2,
+                "LinesOfCode": 39,
+                "LinesAdded": 9,
+                "LinesDeleted": 7
+            }
+        }
+    },
+    {
+        "StartTime": "2019-03-06T10:52:39Z",
+        "EndTime": "2019-03-07T10:52:39Z",
+        "Elements": {
+            "src/Extraction/GitDataExtractor/GitDataExtractor/Abstraction/IDataStorage.cs": {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Abstraction/IDataStorage.cs",
+                "AbsoluteLinesDelta": 4,
+                "RelativeLinesDelta": 2,
+                "LinesOfCode": 2,
+                "LinesAdded": 3,
+                "LinesDeleted": 1
+            },
+            "src/Extraction/GitDataExtractor/GitDataExtractor/Aggregator/HistoryAggregator.cs": {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Aggregator/HistoryAggregator.cs",
+                "AbsoluteLinesDelta": 53,
+                "RelativeLinesDelta": 53,
+                "LinesOfCode": 53,
+                "LinesAdded": 53,
+                "LinesDeleted": 0
+            },
+            "src/Extraction/GitDataExtractor/GitDataExtractor/Configuration.cs": {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Configuration.cs",
+                "AbsoluteLinesDelta": 16,
+                "RelativeLinesDelta": 0,
+                "LinesOfCode": 13,
+                "LinesAdded": 8,
+                "LinesDeleted": 8
+            },
+            "src/Extraction/GitDataExtractor/GitDataExtractor/Miner/GitClient.cs": {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Miner/GitClient.cs",
+                "AbsoluteLinesDelta": 2,
+                "RelativeLinesDelta": 0,
+                "LinesOfCode": 39,
+                "LinesAdded": 1,
+                "LinesDeleted": 1
+            },
+            "src/Extraction/GitDataExtractor/GitDataExtractor/Miner/GitHistoryExtractor.cs": {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Miner/GitHistoryExtractor.cs",
+                "AbsoluteLinesDelta": 2,
+                "RelativeLinesDelta": 0,
+                "LinesOfCode": 61,
+                "LinesAdded": 1,
+                "LinesDeleted": 1
+            },
+            "src/Extraction/GitDataExtractor/GitDataExtractor/Model/CommitFile.cs": {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Model/CommitFile.cs",
+                "AbsoluteLinesDelta": 2,
+                "RelativeLinesDelta": -2,
+                "LinesOfCode": 13,
+                "LinesAdded": 0,
+                "LinesDeleted": 2
+            },
+            "src/Extraction/GitDataExtractor/GitDataExtractor/Model/MinedCommitRecord.cs": {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Model/MinedCommitRecord.cs",
+                "AbsoluteLinesDelta": 1,
+                "RelativeLinesDelta": -1,
+                "LinesOfCode": 31,
+                "LinesAdded": 0,
+                "LinesDeleted": 1
+            },
+            "src/Extraction/GitDataExtractor/GitDataExtractor/Program.cs": {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Program.cs",
+                "AbsoluteLinesDelta": 84,
+                "RelativeLinesDelta": 30,
+                "LinesOfCode": 56,
+                "LinesAdded": 57,
+                "LinesDeleted": 27
+            },
+            "src/Extraction/GitDataExtractor/GitDataExtractor/Storage/JsonStorage.cs": {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Storage/JsonStorage.cs",
+                "AbsoluteLinesDelta": 8,
+                "RelativeLinesDelta": 2,
+                "LinesOfCode": 15,
+                "LinesAdded": 5,
+                "LinesDeleted": 3
+            }
+        }
+    },
+    {
+        "StartTime": "2019-03-07T10:52:39Z",
+        "EndTime": "2019-03-08T10:52:39Z",
+        "Elements": {
+            "src/Extraction/GitDataExtractor/GitDataExtractor/Aggregator/HistoryAggregator.cs": {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Aggregator/HistoryAggregator.cs",
+                "AbsoluteLinesDelta": 159,
+                "RelativeLinesDelta": -25,
+                "LinesOfCode": 28,
+                "LinesAdded": 67,
+                "LinesDeleted": 92
+            },
+            "src/Extraction/GitDataExtractor/GitDataExtractor/Aggregator/IntervalCommitGroup.cs": {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Aggregator/IntervalCommitGroup.cs",
+                "AbsoluteLinesDelta": 39,
+                "RelativeLinesDelta": 13,
+                "LinesOfCode": 13,
+                "LinesAdded": 26,
+                "LinesDeleted": 13
+            },
+            "src/Extraction/GitDataExtractor/GitDataExtractor/Aggregator/IntervalGroupedCommitCollection.cs": {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Aggregator/IntervalGroupedCommitCollection.cs",
+                "AbsoluteLinesDelta": 135,
+                "RelativeLinesDelta": 45,
+                "LinesOfCode": 45,
+                "LinesAdded": 90,
+                "LinesDeleted": 45
+            },
+            "src/Extraction/GitDataExtractor/GitDataExtractor/Program.cs": {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Program.cs",
+                "AbsoluteLinesDelta": 4,
+                "RelativeLinesDelta": 0,
+                "LinesOfCode": 56,
+                "LinesAdded": 2,
+                "LinesDeleted": 2
+            }
+        }
+    },
+    {
+        "StartTime": "2019-03-08T10:52:39Z",
+        "EndTime": "2019-03-09T10:52:39Z",
+        "Elements": {
+            "src/Extraction/GitDataExtractor/GitDataExtractor/Aggregator/Abstraction/IAggregateStorage.cs": {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Aggregator/Abstraction/IAggregateStorage.cs",
+                "AbsoluteLinesDelta": 11,
+                "RelativeLinesDelta": 11,
+                "LinesOfCode": 11,
+                "LinesAdded": 11,
+                "LinesDeleted": 0
+            },
+            "src/Extraction/GitDataExtractor/GitDataExtractor/Aggregator/HashTableIntervalGroup.cs": {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Aggregator/HashTableIntervalGroup.cs",
+                "AbsoluteLinesDelta": 14,
+                "RelativeLinesDelta": 14,
+                "LinesOfCode": 14,
+                "LinesAdded": 14,
+                "LinesDeleted": 0
+            },
+            "src/Extraction/GitDataExtractor/GitDataExtractor/Aggregator/HistoryAggregator.cs": {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Aggregator/HistoryAggregator.cs",
+                "AbsoluteLinesDelta": 102,
+                "RelativeLinesDelta": 74,
+                "LinesOfCode": 102,
+                "LinesAdded": 88,
+                "LinesDeleted": 14
+            },
+            "src/Extraction/GitDataExtractor/GitDataExtractor/Aggregator/IntervalGroup.cs": {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Aggregator/IntervalGroup.cs",
+                "AbsoluteLinesDelta": 13,
+                "RelativeLinesDelta": 1,
+                "LinesOfCode": 1,
+                "LinesAdded": 7,
+                "LinesDeleted": 6
+            },
+            "src/Extraction/GitDataExtractor/GitDataExtractor/Aggregator/IntervalGroupedCommitCollection.cs": {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Aggregator/IntervalGroupedCommitCollection.cs",
+                "AbsoluteLinesDelta": 84,
+                "RelativeLinesDelta": 0,
+                "LinesOfCode": 45,
+                "LinesAdded": 42,
+                "LinesDeleted": 42
+            },
+            "src/Extraction/GitDataExtractor/GitDataExtractor/Configuration.cs": {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Configuration.cs",
+                "AbsoluteLinesDelta": 2,
+                "RelativeLinesDelta": 2,
+                "LinesOfCode": 15,
+                "LinesAdded": 2,
+                "LinesDeleted": 0
+            },
+            "src/Extraction/GitDataExtractor/GitDataExtractor/Miner/Abstraction/IHistoryStorage.cs": {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Miner/Abstraction/IHistoryStorage.cs",
+                "AbsoluteLinesDelta": 6,
+                "RelativeLinesDelta": 0,
+                "LinesOfCode": 0,
+                "LinesAdded": 3,
+                "LinesDeleted": 3
+            },
+            "src/Extraction/GitDataExtractor/GitDataExtractor/Miner/GitClient.cs": {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Miner/GitClient.cs",
+                "AbsoluteLinesDelta": 2,
+                "RelativeLinesDelta": 0,
+                "LinesOfCode": 39,
+                "LinesAdded": 1,
+                "LinesDeleted": 1
+            },
+            "src/Extraction/GitDataExtractor/GitDataExtractor/Miner/GitHistoryExtractor.cs": {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Miner/GitHistoryExtractor.cs",
+                "AbsoluteLinesDelta": 13,
+                "RelativeLinesDelta": -3,
+                "LinesOfCode": 58,
+                "LinesAdded": 5,
+                "LinesDeleted": 8
+            },
+            "src/Extraction/GitDataExtractor/GitDataExtractor/Models/Aggregation/File.cs": {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Models/Aggregation/File.cs",
+                "AbsoluteLinesDelta": 17,
+                "RelativeLinesDelta": 17,
+                "LinesOfCode": 17,
+                "LinesAdded": 17,
+                "LinesDeleted": 0
+            },
+            "src/Extraction/GitDataExtractor/GitDataExtractor/Models/Mining/Commit.cs": {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Models/Mining/Commit.cs",
+                "AbsoluteLinesDelta": 2,
+                "RelativeLinesDelta": 0,
+                "LinesOfCode": 0,
+                "LinesAdded": 1,
+                "LinesDeleted": 1
+            },
+            "src/Extraction/GitDataExtractor/GitDataExtractor/Models/Mining/CommitAggregate.cs": {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Models/Mining/CommitAggregate.cs",
+                "AbsoluteLinesDelta": 2,
+                "RelativeLinesDelta": 0,
+                "LinesOfCode": 0,
+                "LinesAdded": 1,
+                "LinesDeleted": 1
+            },
+            "src/Extraction/GitDataExtractor/GitDataExtractor/Models/Mining/CommitFile.cs": {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Models/Mining/CommitFile.cs",
+                "AbsoluteLinesDelta": 2,
+                "RelativeLinesDelta": 0,
+                "LinesOfCode": 0,
+                "LinesAdded": 1,
+                "LinesDeleted": 1
+            },
+            "src/Extraction/GitDataExtractor/GitDataExtractor/Program.cs": {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Program.cs",
+                "AbsoluteLinesDelta": 11,
+                "RelativeLinesDelta": -1,
+                "LinesOfCode": 55,
+                "LinesAdded": 5,
+                "LinesDeleted": 6
+            },
+            "src/Extraction/GitDataExtractor/GitDataExtractor/Storage/JsonStorage.cs": {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Storage/JsonStorage.cs",
+                "AbsoluteLinesDelta": 18,
+                "RelativeLinesDelta": 2,
+                "LinesOfCode": 17,
+                "LinesAdded": 10,
+                "LinesDeleted": 8
+            }
+        }
+    }
+]
