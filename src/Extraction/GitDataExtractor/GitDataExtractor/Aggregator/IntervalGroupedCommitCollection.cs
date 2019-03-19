@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
-using GitDataExtractor.Model;
+using GitDataExtractor.Models.Mining;
 
 namespace GitDataExtractor.Aggregator
 {
-    internal class IntervalGroupedCommitCollection : LinkedList<IntervalCommitGroup>
+    internal class IntervalGroupedCommitCollection : LinkedList<LinkedIntervalGroup<Commit>>
     {
         private readonly DateTime _startTime;
         private readonly TimeSpan _interval;
@@ -21,7 +21,7 @@ namespace GitDataExtractor.Aggregator
 
         private void Initialize()
         {
-            AddLast(new IntervalCommitGroup());
+            AddLast(new LinkedIntervalGroup<Commit>());
 
             DateTime takeUntil = _startTime + _interval;
 
@@ -32,13 +32,13 @@ namespace GitDataExtractor.Aggregator
                 // As the commits are ordered, a new bag must be started.
                 if (commit.Date > takeUntil)
                 {
-                    AddLast(new IntervalCommitGroup());
+                    AddLast(new LinkedIntervalGroup<Commit>());
                     Last.Value.StartTime = takeUntil;
                     takeUntil += _interval;
                     Last.Value.EndTime = takeUntil;
                 }
 
-                Last.Value.AddLast(commit);
+                Last.Value.Elements.AddLast(commit);
             }
         }
     }

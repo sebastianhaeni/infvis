@@ -1,6 +1,6 @@
 using LibGit2Sharp;
 
-namespace GitDataExtractor.Model
+namespace GitDataExtractor.Models.Mining
 {
     public class CommitAggregate
     {

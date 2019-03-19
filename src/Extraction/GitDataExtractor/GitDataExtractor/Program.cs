@@ -1,6 +1,5 @@
 using System;
 using System.IO;
-using GitDataExtractor.Abstraction;
 using GitDataExtractor.Aggregator;
 using GitDataExtractor.Miner;
 using GitDataExtractor.Storage;
@@ -21,7 +20,7 @@ namespace GitDataExtractor
 
             configurationRoot.Bind(Configuration.Instance);
 
-            IDataStorage storage = new JsonStorage();
+            var storage = new JsonStorage();
 
             int toExecute = GetValidExecutionOption();
             switch (toExecute)
@@ -32,7 +31,7 @@ namespace GitDataExtractor
                     break;
 
                 case 2:
-                    var aggregator = new HistoryAggregator(storage);
+                    var aggregator = new HistoryAggregator(storage, storage);
                     aggregator.Execute();
                     break;
             }
@@ -44,7 +43,7 @@ namespace GitDataExtractor
             {
                 Console.WriteLine("[1] Run Extractor...");
                 Console.WriteLine("[2] Run Aggregator...");
-                if(int.TryParse(Console.ReadLine(), out int result) && (result == 1 || result == 2))
+                if (int.TryParse(Console.ReadLine(), out int result) && (result == 1 || result == 2))
                 {
                     return result;
                 }
