@@ -97,6 +97,9 @@ namespace GitDataExtractor.Aggregator
             return intervalGroups;
         }
 
-        private bool IncludeFile(string fullName) => System.IO.Path.GetExtension(fullName) == ".cs";
+        private bool IncludeFile(string fullName)
+        {
+            return Configuration.Instance.FileExtensionsToInclude.Any(f => System.IO.Path.GetExtension(fullName) == f);
+        }
     }
 }
