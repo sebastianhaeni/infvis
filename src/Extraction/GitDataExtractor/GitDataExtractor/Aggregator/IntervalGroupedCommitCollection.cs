@@ -21,9 +21,10 @@ namespace GitDataExtractor.Aggregator
 
         private void Initialize()
         {
-            AddLast(new LinkedIntervalGroup<Commit>());
-
             DateTime takeUntil = _startTime + _interval;
+            AddLast(new LinkedIntervalGroup<Commit>());
+            Last.Value.StartTime = _startTime;
+            Last.Value.EndTime = takeUntil;
 
             var commitQueue = new Queue<Commit>(_history);
             while (commitQueue.TryDequeue(out Commit commit))
