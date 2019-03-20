@@ -279,6 +279,30 @@
                 "LinesOfCode": 56,
                 "LinesAdded": 2,
                 "LinesDeleted": 2
+            },
+            "src/Visualization/index.html": {
+                "FilePath": "src/Visualization/index.html",
+                "AbsoluteLinesDelta": 45,
+                "RelativeLinesDelta": 15,
+                "LinesOfCode": 15,
+                "LinesAdded": 30,
+                "LinesDeleted": 15
+            },
+            "src/Visualization/src/extract-data.ts": {
+                "FilePath": "src/Visualization/src/extract-data.ts",
+                "AbsoluteLinesDelta": 111,
+                "RelativeLinesDelta": 37,
+                "LinesOfCode": 37,
+                "LinesAdded": 74,
+                "LinesDeleted": 37
+            },
+            "src/Visualization/src/index.ts": {
+                "FilePath": "src/Visualization/src/index.ts",
+                "AbsoluteLinesDelta": 135,
+                "RelativeLinesDelta": 45,
+                "LinesOfCode": 45,
+                "LinesAdded": 90,
+                "LinesDeleted": 45
             }
         }
     },
@@ -405,6 +429,917 @@
                 "LinesOfCode": 17,
                 "LinesAdded": 10,
                 "LinesDeleted": 8
+            }
+        }
+    },
+    {
+        "StartTime": "2019-03-09T10:52:39Z",
+        "EndTime": "2019-03-10T10:52:39Z",
+        "Elements": {
+            "src/Visualization/index.html": {
+                "FilePath": "src/Visualization/index.html",
+                "AbsoluteLinesDelta": 15,
+                "RelativeLinesDelta": -15,
+                "LinesOfCode": 0,
+                "LinesAdded": 0,
+                "LinesDeleted": 15
+            },
+            "src/viewer/babel.config.js": {
+                "FilePath": "src/viewer/babel.config.js",
+                "AbsoluteLinesDelta": 5,
+                "RelativeLinesDelta": 5,
+                "LinesOfCode": 5,
+                "LinesAdded": 5,
+                "LinesDeleted": 0
+            },
+            "src/viewer/postcss.config.js": {
+                "FilePath": "src/viewer/postcss.config.js",
+                "AbsoluteLinesDelta": 5,
+                "RelativeLinesDelta": 5,
+                "LinesOfCode": 5,
+                "LinesAdded": 5,
+                "LinesDeleted": 0
+            },
+            "src/viewer/public/index.html": {
+                "FilePath": "src/viewer/public/index.html",
+                "AbsoluteLinesDelta": 17,
+                "RelativeLinesDelta": 17,
+                "LinesOfCode": 17,
+                "LinesAdded": 17,
+                "LinesDeleted": 0
+            },
+            "src/viewer/src/App.vue": {
+                "FilePath": "src/viewer/src/App.vue",
+                "AbsoluteLinesDelta": 46,
+                "RelativeLinesDelta": 46,
+                "LinesOfCode": 46,
+                "LinesAdded": 46,
+                "LinesDeleted": 0
+            },
+            "src/viewer/src/data/extract-data.ts": {
+                "FilePath": "src/viewer/src/data/extract-data.ts",
+                "AbsoluteLinesDelta": 1,
+                "RelativeLinesDelta": 1,
+                "LinesOfCode": 1,
+                "LinesAdded": 1,
+                "LinesDeleted": 0
+            },
+            "src/viewer/src/main.ts": {
+                "FilePath": "src/viewer/src/main.ts",
+                "AbsoluteLinesDelta": 10,
+                "RelativeLinesDelta": 10,
+                "LinesOfCode": 10,
+                "LinesAdded": 10,
+                "LinesDeleted": 0
+            },
+            "src/viewer/src/router.ts": {
+                "FilePath": "src/viewer/src/router.ts",
+                "AbsoluteLinesDelta": 33,
+                "RelativeLinesDelta": 33,
+                "LinesOfCode": 33,
+                "LinesAdded": 33,
+                "LinesDeleted": 0
+            },
+            "src/viewer/src/shims-tsx.d.ts": {
+                "FilePath": "src/viewer/src/shims-tsx.d.ts",
+                "AbsoluteLinesDelta": 17,
+                "RelativeLinesDelta": 17,
+                "LinesOfCode": 17,
+                "LinesAdded": 17,
+                "LinesDeleted": 0
+            },
+            "src/viewer/src/shims-vue.d.ts": {
+                "FilePath": "src/viewer/src/shims-vue.d.ts",
+                "AbsoluteLinesDelta": 4,
+                "RelativeLinesDelta": 4,
+                "LinesOfCode": 4,
+                "LinesAdded": 4,
+                "LinesDeleted": 0
+            },
+            "src/viewer/src/views/Dendrogram.vue": {
+                "FilePath": "src/viewer/src/views/Dendrogram.vue",
+                "AbsoluteLinesDelta": 10,
+                "RelativeLinesDelta": 10,
+                "LinesOfCode": 10,
+                "LinesAdded": 10,
+                "LinesDeleted": 0
+            },
+            "src/viewer/src/views/Home.vue": {
+                "FilePath": "src/viewer/src/views/Home.vue",
+                "AbsoluteLinesDelta": 11,
+                "RelativeLinesDelta": 11,
+                "LinesOfCode": 11,
+                "LinesAdded": 11,
+                "LinesDeleted": 0
+            },
+            "src/viewer/src/views/Tree.vue": {
+                "FilePath": "src/viewer/src/views/Tree.vue",
+                "AbsoluteLinesDelta": 123,
+                "RelativeLinesDelta": 33,
+                "LinesOfCode": 33,
+                "LinesAdded": 78,
+                "LinesDeleted": 45
+            },
+            "src/viewer/src/views/Treemap.vue": {
+                "FilePath": "src/viewer/src/views/Treemap.vue",
+                "AbsoluteLinesDelta": 117,
+                "RelativeLinesDelta": 117,
+                "LinesOfCode": 117,
+                "LinesAdded": 117,
+                "LinesDeleted": 0
+            },
+            "src/viewer/vue.config.js": {
+                "FilePath": "src/viewer/vue.config.js",
+                "AbsoluteLinesDelta": 5,
+                "RelativeLinesDelta": 5,
+                "LinesOfCode": 5,
+                "LinesAdded": 5,
+                "LinesDeleted": 0
+            }
+        }
+    },
+    {
+        "StartTime": "2019-03-10T10:52:39Z",
+        "EndTime": "2019-03-11T10:52:39Z",
+        "Elements": {
+            "src/Visualization/index.html": {
+                "FilePath": "src/Visualization/index.html",
+                "AbsoluteLinesDelta": 15,
+                "RelativeLinesDelta": 15,
+                "LinesOfCode": 15,
+                "LinesAdded": 15,
+                "LinesDeleted": 0
+            },
+            "src/Visualization/src/extract-data.ts": {
+                "FilePath": "src/Visualization/src/extract-data.ts",
+                "AbsoluteLinesDelta": 1,
+                "RelativeLinesDelta": -1,
+                "LinesOfCode": 36,
+                "LinesAdded": 0,
+                "LinesDeleted": 1
+            },
+            "src/Visualization/src/index.ts": {
+                "FilePath": "src/Visualization/src/index.ts",
+                "AbsoluteLinesDelta": 123,
+                "RelativeLinesDelta": -33,
+                "LinesOfCode": 12,
+                "LinesAdded": 45,
+                "LinesDeleted": 78
+            },
+            "src/viewer/babel.config.js": {
+                "FilePath": "src/viewer/babel.config.js",
+                "AbsoluteLinesDelta": 5,
+                "RelativeLinesDelta": -5,
+                "LinesOfCode": 0,
+                "LinesAdded": 0,
+                "LinesDeleted": 5
+            },
+            "src/viewer/postcss.config.js": {
+                "FilePath": "src/viewer/postcss.config.js",
+                "AbsoluteLinesDelta": 5,
+                "RelativeLinesDelta": -5,
+                "LinesOfCode": 0,
+                "LinesAdded": 0,
+                "LinesDeleted": 5
+            },
+            "src/viewer/public/index.html": {
+                "FilePath": "src/viewer/public/index.html",
+                "AbsoluteLinesDelta": 17,
+                "RelativeLinesDelta": -17,
+                "LinesOfCode": 0,
+                "LinesAdded": 0,
+                "LinesDeleted": 17
+            },
+            "src/viewer/src/App.vue": {
+                "FilePath": "src/viewer/src/App.vue",
+                "AbsoluteLinesDelta": 46,
+                "RelativeLinesDelta": -46,
+                "LinesOfCode": 0,
+                "LinesAdded": 0,
+                "LinesDeleted": 46
+            },
+            "src/viewer/src/main.ts": {
+                "FilePath": "src/viewer/src/main.ts",
+                "AbsoluteLinesDelta": 10,
+                "RelativeLinesDelta": -10,
+                "LinesOfCode": 0,
+                "LinesAdded": 0,
+                "LinesDeleted": 10
+            },
+            "src/viewer/src/router.ts": {
+                "FilePath": "src/viewer/src/router.ts",
+                "AbsoluteLinesDelta": 33,
+                "RelativeLinesDelta": -33,
+                "LinesOfCode": 0,
+                "LinesAdded": 0,
+                "LinesDeleted": 33
+            },
+            "src/viewer/src/shims-tsx.d.ts": {
+                "FilePath": "src/viewer/src/shims-tsx.d.ts",
+                "AbsoluteLinesDelta": 17,
+                "RelativeLinesDelta": -17,
+                "LinesOfCode": 0,
+                "LinesAdded": 0,
+                "LinesDeleted": 17
+            },
+            "src/viewer/src/shims-vue.d.ts": {
+                "FilePath": "src/viewer/src/shims-vue.d.ts",
+                "AbsoluteLinesDelta": 4,
+                "RelativeLinesDelta": -4,
+                "LinesOfCode": 0,
+                "LinesAdded": 0,
+                "LinesDeleted": 4
+            },
+            "src/viewer/src/views/Dendrogram.vue": {
+                "FilePath": "src/viewer/src/views/Dendrogram.vue",
+                "AbsoluteLinesDelta": 10,
+                "RelativeLinesDelta": -10,
+                "LinesOfCode": 0,
+                "LinesAdded": 0,
+                "LinesDeleted": 10
+            },
+            "src/viewer/src/views/Home.vue": {
+                "FilePath": "src/viewer/src/views/Home.vue",
+                "AbsoluteLinesDelta": 11,
+                "RelativeLinesDelta": -11,
+                "LinesOfCode": 0,
+                "LinesAdded": 0,
+                "LinesDeleted": 11
+            },
+            "src/viewer/src/views/Treemap.vue": {
+                "FilePath": "src/viewer/src/views/Treemap.vue",
+                "AbsoluteLinesDelta": 117,
+                "RelativeLinesDelta": -117,
+                "LinesOfCode": 0,
+                "LinesAdded": 0,
+                "LinesDeleted": 117
+            },
+            "src/viewer/vue.config.js": {
+                "FilePath": "src/viewer/vue.config.js",
+                "AbsoluteLinesDelta": 5,
+                "RelativeLinesDelta": -5,
+                "LinesOfCode": 0,
+                "LinesAdded": 0,
+                "LinesDeleted": 5
+            }
+        }
+    },
+    {
+        "StartTime": "2019-03-11T10:52:39Z",
+        "EndTime": "2019-03-12T10:52:39Z",
+        "Elements": {}
+    },
+    {
+        "StartTime": "2019-03-12T10:52:39Z",
+        "EndTime": "2019-03-13T10:52:39Z",
+        "Elements": {
+            "src/Visualization/index.html": {
+                "FilePath": "src/Visualization/index.html",
+                "AbsoluteLinesDelta": 15,
+                "RelativeLinesDelta": -15,
+                "LinesOfCode": 0,
+                "LinesAdded": 0,
+                "LinesDeleted": 15
+            },
+            "src/viewer/babel.config.js": {
+                "FilePath": "src/viewer/babel.config.js",
+                "AbsoluteLinesDelta": 5,
+                "RelativeLinesDelta": 5,
+                "LinesOfCode": 5,
+                "LinesAdded": 5,
+                "LinesDeleted": 0
+            },
+            "src/viewer/postcss.config.js": {
+                "FilePath": "src/viewer/postcss.config.js",
+                "AbsoluteLinesDelta": 5,
+                "RelativeLinesDelta": 5,
+                "LinesOfCode": 5,
+                "LinesAdded": 5,
+                "LinesDeleted": 0
+            },
+            "src/viewer/public/index.html": {
+                "FilePath": "src/viewer/public/index.html",
+                "AbsoluteLinesDelta": 17,
+                "RelativeLinesDelta": 17,
+                "LinesOfCode": 17,
+                "LinesAdded": 17,
+                "LinesDeleted": 0
+            },
+            "src/viewer/src/App.vue": {
+                "FilePath": "src/viewer/src/App.vue",
+                "AbsoluteLinesDelta": 46,
+                "RelativeLinesDelta": 46,
+                "LinesOfCode": 46,
+                "LinesAdded": 46,
+                "LinesDeleted": 0
+            },
+            "src/viewer/src/data/extract-data.ts": {
+                "FilePath": "src/viewer/src/data/extract-data.ts",
+                "AbsoluteLinesDelta": 1,
+                "RelativeLinesDelta": 1,
+                "LinesOfCode": 2,
+                "LinesAdded": 1,
+                "LinesDeleted": 0
+            },
+            "src/viewer/src/main.ts": {
+                "FilePath": "src/viewer/src/main.ts",
+                "AbsoluteLinesDelta": 10,
+                "RelativeLinesDelta": 10,
+                "LinesOfCode": 10,
+                "LinesAdded": 10,
+                "LinesDeleted": 0
+            },
+            "src/viewer/src/router.ts": {
+                "FilePath": "src/viewer/src/router.ts",
+                "AbsoluteLinesDelta": 33,
+                "RelativeLinesDelta": 33,
+                "LinesOfCode": 33,
+                "LinesAdded": 33,
+                "LinesDeleted": 0
+            },
+            "src/viewer/src/shims-tsx.d.ts": {
+                "FilePath": "src/viewer/src/shims-tsx.d.ts",
+                "AbsoluteLinesDelta": 17,
+                "RelativeLinesDelta": 17,
+                "LinesOfCode": 17,
+                "LinesAdded": 17,
+                "LinesDeleted": 0
+            },
+            "src/viewer/src/shims-vue.d.ts": {
+                "FilePath": "src/viewer/src/shims-vue.d.ts",
+                "AbsoluteLinesDelta": 4,
+                "RelativeLinesDelta": 4,
+                "LinesOfCode": 4,
+                "LinesAdded": 4,
+                "LinesDeleted": 0
+            },
+            "src/viewer/src/views/Dendrogram.vue": {
+                "FilePath": "src/viewer/src/views/Dendrogram.vue",
+                "AbsoluteLinesDelta": 10,
+                "RelativeLinesDelta": 10,
+                "LinesOfCode": 10,
+                "LinesAdded": 10,
+                "LinesDeleted": 0
+            },
+            "src/viewer/src/views/Home.vue": {
+                "FilePath": "src/viewer/src/views/Home.vue",
+                "AbsoluteLinesDelta": 11,
+                "RelativeLinesDelta": 11,
+                "LinesOfCode": 11,
+                "LinesAdded": 11,
+                "LinesDeleted": 0
+            },
+            "src/viewer/src/views/Tree.vue": {
+                "FilePath": "src/viewer/src/views/Tree.vue",
+                "AbsoluteLinesDelta": 123,
+                "RelativeLinesDelta": 33,
+                "LinesOfCode": 66,
+                "LinesAdded": 78,
+                "LinesDeleted": 45
+            },
+            "src/viewer/src/views/Treemap.vue": {
+                "FilePath": "src/viewer/src/views/Treemap.vue",
+                "AbsoluteLinesDelta": 117,
+                "RelativeLinesDelta": 117,
+                "LinesOfCode": 117,
+                "LinesAdded": 117,
+                "LinesDeleted": 0
+            },
+            "src/viewer/vue.config.js": {
+                "FilePath": "src/viewer/vue.config.js",
+                "AbsoluteLinesDelta": 5,
+                "RelativeLinesDelta": 5,
+                "LinesOfCode": 5,
+                "LinesAdded": 5,
+                "LinesDeleted": 0
+            }
+        }
+    },
+    {
+        "StartTime": "2019-03-13T10:52:39Z",
+        "EndTime": "2019-03-14T10:52:39Z",
+        "Elements": {
+            "src/Extraction/GitDataExtractor/GitDataExtractor/Aggregator/HistoryAggregator.cs": {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Aggregator/HistoryAggregator.cs",
+                "AbsoluteLinesDelta": 9,
+                "RelativeLinesDelta": 3,
+                "LinesOfCode": 105,
+                "LinesAdded": 6,
+                "LinesDeleted": 3
+            },
+            "src/Extraction/GitDataExtractor/GitDataExtractor/Configuration.cs": {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Configuration.cs",
+                "AbsoluteLinesDelta": 4,
+                "RelativeLinesDelta": 4,
+                "LinesOfCode": 19,
+                "LinesAdded": 4,
+                "LinesDeleted": 0
+            },
+            "src/Visualization/index.html": {
+                "FilePath": "src/Visualization/index.html",
+                "AbsoluteLinesDelta": 15,
+                "RelativeLinesDelta": 15,
+                "LinesOfCode": 15,
+                "LinesAdded": 15,
+                "LinesDeleted": 0
+            },
+            "src/Visualization/src/extract-data.ts": {
+                "FilePath": "src/Visualization/src/extract-data.ts",
+                "AbsoluteLinesDelta": 1,
+                "RelativeLinesDelta": -1,
+                "LinesOfCode": 35,
+                "LinesAdded": 0,
+                "LinesDeleted": 1
+            },
+            "src/Visualization/src/index.ts": {
+                "FilePath": "src/Visualization/src/index.ts",
+                "AbsoluteLinesDelta": 123,
+                "RelativeLinesDelta": -33,
+                "LinesOfCode": -21,
+                "LinesAdded": 45,
+                "LinesDeleted": 78
+            },
+            "src/viewer/babel.config.js": {
+                "FilePath": "src/viewer/babel.config.js",
+                "AbsoluteLinesDelta": 5,
+                "RelativeLinesDelta": -5,
+                "LinesOfCode": 0,
+                "LinesAdded": 0,
+                "LinesDeleted": 5
+            },
+            "src/viewer/postcss.config.js": {
+                "FilePath": "src/viewer/postcss.config.js",
+                "AbsoluteLinesDelta": 5,
+                "RelativeLinesDelta": -5,
+                "LinesOfCode": 0,
+                "LinesAdded": 0,
+                "LinesDeleted": 5
+            },
+            "src/viewer/public/index.html": {
+                "FilePath": "src/viewer/public/index.html",
+                "AbsoluteLinesDelta": 17,
+                "RelativeLinesDelta": -17,
+                "LinesOfCode": 0,
+                "LinesAdded": 0,
+                "LinesDeleted": 17
+            },
+            "src/viewer/src/App.vue": {
+                "FilePath": "src/viewer/src/App.vue",
+                "AbsoluteLinesDelta": 46,
+                "RelativeLinesDelta": -46,
+                "LinesOfCode": 0,
+                "LinesAdded": 0,
+                "LinesDeleted": 46
+            },
+            "src/viewer/src/main.ts": {
+                "FilePath": "src/viewer/src/main.ts",
+                "AbsoluteLinesDelta": 10,
+                "RelativeLinesDelta": -10,
+                "LinesOfCode": 0,
+                "LinesAdded": 0,
+                "LinesDeleted": 10
+            },
+            "src/viewer/src/router.ts": {
+                "FilePath": "src/viewer/src/router.ts",
+                "AbsoluteLinesDelta": 33,
+                "RelativeLinesDelta": -33,
+                "LinesOfCode": 0,
+                "LinesAdded": 0,
+                "LinesDeleted": 33
+            },
+            "src/viewer/src/shims-tsx.d.ts": {
+                "FilePath": "src/viewer/src/shims-tsx.d.ts",
+                "AbsoluteLinesDelta": 17,
+                "RelativeLinesDelta": -17,
+                "LinesOfCode": 0,
+                "LinesAdded": 0,
+                "LinesDeleted": 17
+            },
+            "src/viewer/src/shims-vue.d.ts": {
+                "FilePath": "src/viewer/src/shims-vue.d.ts",
+                "AbsoluteLinesDelta": 4,
+                "RelativeLinesDelta": -4,
+                "LinesOfCode": 0,
+                "LinesAdded": 0,
+                "LinesDeleted": 4
+            },
+            "src/viewer/src/views/Dendrogram.vue": {
+                "FilePath": "src/viewer/src/views/Dendrogram.vue",
+                "AbsoluteLinesDelta": 10,
+                "RelativeLinesDelta": -10,
+                "LinesOfCode": 0,
+                "LinesAdded": 0,
+                "LinesDeleted": 10
+            },
+            "src/viewer/src/views/Home.vue": {
+                "FilePath": "src/viewer/src/views/Home.vue",
+                "AbsoluteLinesDelta": 11,
+                "RelativeLinesDelta": -11,
+                "LinesOfCode": 0,
+                "LinesAdded": 0,
+                "LinesDeleted": 11
+            },
+            "src/viewer/src/views/Treemap.vue": {
+                "FilePath": "src/viewer/src/views/Treemap.vue",
+                "AbsoluteLinesDelta": 117,
+                "RelativeLinesDelta": -117,
+                "LinesOfCode": 0,
+                "LinesAdded": 0,
+                "LinesDeleted": 117
+            },
+            "src/viewer/vue.config.js": {
+                "FilePath": "src/viewer/vue.config.js",
+                "AbsoluteLinesDelta": 5,
+                "RelativeLinesDelta": -5,
+                "LinesOfCode": 0,
+                "LinesAdded": 0,
+                "LinesDeleted": 5
+            }
+        }
+    },
+    {
+        "StartTime": "2019-03-14T10:52:39Z",
+        "EndTime": "2019-03-15T10:52:39Z",
+        "Elements": {
+            "src/Visualization/index.html": {
+                "FilePath": "src/Visualization/index.html",
+                "AbsoluteLinesDelta": 15,
+                "RelativeLinesDelta": -15,
+                "LinesOfCode": 0,
+                "LinesAdded": 0,
+                "LinesDeleted": 15
+            },
+            "src/viewer/babel.config.js": {
+                "FilePath": "src/viewer/babel.config.js",
+                "AbsoluteLinesDelta": 5,
+                "RelativeLinesDelta": 5,
+                "LinesOfCode": 5,
+                "LinesAdded": 5,
+                "LinesDeleted": 0
+            },
+            "src/viewer/postcss.config.js": {
+                "FilePath": "src/viewer/postcss.config.js",
+                "AbsoluteLinesDelta": 5,
+                "RelativeLinesDelta": 5,
+                "LinesOfCode": 5,
+                "LinesAdded": 5,
+                "LinesDeleted": 0
+            },
+            "src/viewer/public/index.html": {
+                "FilePath": "src/viewer/public/index.html",
+                "AbsoluteLinesDelta": 17,
+                "RelativeLinesDelta": 17,
+                "LinesOfCode": 17,
+                "LinesAdded": 17,
+                "LinesDeleted": 0
+            },
+            "src/viewer/src/App.vue": {
+                "FilePath": "src/viewer/src/App.vue",
+                "AbsoluteLinesDelta": 46,
+                "RelativeLinesDelta": 46,
+                "LinesOfCode": 46,
+                "LinesAdded": 46,
+                "LinesDeleted": 0
+            },
+            "src/viewer/src/data/extract-data.ts": {
+                "FilePath": "src/viewer/src/data/extract-data.ts",
+                "AbsoluteLinesDelta": 1,
+                "RelativeLinesDelta": 1,
+                "LinesOfCode": 3,
+                "LinesAdded": 1,
+                "LinesDeleted": 0
+            },
+            "src/viewer/src/main.ts": {
+                "FilePath": "src/viewer/src/main.ts",
+                "AbsoluteLinesDelta": 10,
+                "RelativeLinesDelta": 10,
+                "LinesOfCode": 10,
+                "LinesAdded": 10,
+                "LinesDeleted": 0
+            },
+            "src/viewer/src/router.ts": {
+                "FilePath": "src/viewer/src/router.ts",
+                "AbsoluteLinesDelta": 33,
+                "RelativeLinesDelta": 33,
+                "LinesOfCode": 33,
+                "LinesAdded": 33,
+                "LinesDeleted": 0
+            },
+            "src/viewer/src/shims-tsx.d.ts": {
+                "FilePath": "src/viewer/src/shims-tsx.d.ts",
+                "AbsoluteLinesDelta": 17,
+                "RelativeLinesDelta": 17,
+                "LinesOfCode": 17,
+                "LinesAdded": 17,
+                "LinesDeleted": 0
+            },
+            "src/viewer/src/shims-vue.d.ts": {
+                "FilePath": "src/viewer/src/shims-vue.d.ts",
+                "AbsoluteLinesDelta": 4,
+                "RelativeLinesDelta": 4,
+                "LinesOfCode": 4,
+                "LinesAdded": 4,
+                "LinesDeleted": 0
+            },
+            "src/viewer/src/views/Dendrogram.vue": {
+                "FilePath": "src/viewer/src/views/Dendrogram.vue",
+                "AbsoluteLinesDelta": 10,
+                "RelativeLinesDelta": 10,
+                "LinesOfCode": 10,
+                "LinesAdded": 10,
+                "LinesDeleted": 0
+            },
+            "src/viewer/src/views/Home.vue": {
+                "FilePath": "src/viewer/src/views/Home.vue",
+                "AbsoluteLinesDelta": 11,
+                "RelativeLinesDelta": 11,
+                "LinesOfCode": 11,
+                "LinesAdded": 11,
+                "LinesDeleted": 0
+            },
+            "src/viewer/src/views/Tree.vue": {
+                "FilePath": "src/viewer/src/views/Tree.vue",
+                "AbsoluteLinesDelta": 123,
+                "RelativeLinesDelta": 33,
+                "LinesOfCode": 99,
+                "LinesAdded": 78,
+                "LinesDeleted": 45
+            },
+            "src/viewer/src/views/Treemap.vue": {
+                "FilePath": "src/viewer/src/views/Treemap.vue",
+                "AbsoluteLinesDelta": 117,
+                "RelativeLinesDelta": 117,
+                "LinesOfCode": 117,
+                "LinesAdded": 117,
+                "LinesDeleted": 0
+            },
+            "src/viewer/vue.config.js": {
+                "FilePath": "src/viewer/vue.config.js",
+                "AbsoluteLinesDelta": 5,
+                "RelativeLinesDelta": 5,
+                "LinesOfCode": 5,
+                "LinesAdded": 5,
+                "LinesDeleted": 0
+            }
+        }
+    },
+    {
+        "StartTime": "2019-03-15T10:52:39Z",
+        "EndTime": "2019-03-16T10:52:39Z",
+        "Elements": {
+            "src/Extraction/GitDataExtractor/GitDataExtractor/Aggregator/HistoryAggregator.cs": {
+                "FilePath": "src/Extraction/GitDataExtractor/GitDataExtractor/Aggregator/HistoryAggregator.cs",
+                "AbsoluteLinesDelta": 5,
+                "RelativeLinesDelta": -3,
+                "LinesOfCode": 102,
+                "LinesAdded": 1,
+                "LinesDeleted": 4
+            },
+            "src/Visualization/index.html": {
+                "FilePath": "src/Visualization/index.html",
+                "AbsoluteLinesDelta": 15,
+                "RelativeLinesDelta": 15,
+                "LinesOfCode": 15,
+                "LinesAdded": 15,
+                "LinesDeleted": 0
+            },
+            "src/Visualization/src/extract-data.ts": {
+                "FilePath": "src/Visualization/src/extract-data.ts",
+                "AbsoluteLinesDelta": 1,
+                "RelativeLinesDelta": -1,
+                "LinesOfCode": 34,
+                "LinesAdded": 0,
+                "LinesDeleted": 1
+            },
+            "src/Visualization/src/index.ts": {
+                "FilePath": "src/Visualization/src/index.ts",
+                "AbsoluteLinesDelta": 123,
+                "RelativeLinesDelta": -33,
+                "LinesOfCode": -54,
+                "LinesAdded": 45,
+                "LinesDeleted": 78
+            },
+            "src/viewer/babel.config.js": {
+                "FilePath": "src/viewer/babel.config.js",
+                "AbsoluteLinesDelta": 5,
+                "RelativeLinesDelta": -5,
+                "LinesOfCode": 0,
+                "LinesAdded": 0,
+                "LinesDeleted": 5
+            },
+            "src/viewer/postcss.config.js": {
+                "FilePath": "src/viewer/postcss.config.js",
+                "AbsoluteLinesDelta": 5,
+                "RelativeLinesDelta": -5,
+                "LinesOfCode": 0,
+                "LinesAdded": 0,
+                "LinesDeleted": 5
+            },
+            "src/viewer/public/index.html": {
+                "FilePath": "src/viewer/public/index.html",
+                "AbsoluteLinesDelta": 17,
+                "RelativeLinesDelta": -17,
+                "LinesOfCode": 0,
+                "LinesAdded": 0,
+                "LinesDeleted": 17
+            },
+            "src/viewer/src/App.vue": {
+                "FilePath": "src/viewer/src/App.vue",
+                "AbsoluteLinesDelta": 46,
+                "RelativeLinesDelta": -46,
+                "LinesOfCode": 0,
+                "LinesAdded": 0,
+                "LinesDeleted": 46
+            },
+            "src/viewer/src/main.ts": {
+                "FilePath": "src/viewer/src/main.ts",
+                "AbsoluteLinesDelta": 10,
+                "RelativeLinesDelta": -10,
+                "LinesOfCode": 0,
+                "LinesAdded": 0,
+                "LinesDeleted": 10
+            },
+            "src/viewer/src/router.ts": {
+                "FilePath": "src/viewer/src/router.ts",
+                "AbsoluteLinesDelta": 33,
+                "RelativeLinesDelta": -33,
+                "LinesOfCode": 0,
+                "LinesAdded": 0,
+                "LinesDeleted": 33
+            },
+            "src/viewer/src/shims-tsx.d.ts": {
+                "FilePath": "src/viewer/src/shims-tsx.d.ts",
+                "AbsoluteLinesDelta": 17,
+                "RelativeLinesDelta": -17,
+                "LinesOfCode": 0,
+                "LinesAdded": 0,
+                "LinesDeleted": 17
+            },
+            "src/viewer/src/shims-vue.d.ts": {
+                "FilePath": "src/viewer/src/shims-vue.d.ts",
+                "AbsoluteLinesDelta": 4,
+                "RelativeLinesDelta": -4,
+                "LinesOfCode": 0,
+                "LinesAdded": 0,
+                "LinesDeleted": 4
+            },
+            "src/viewer/src/views/Dendrogram.vue": {
+                "FilePath": "src/viewer/src/views/Dendrogram.vue",
+                "AbsoluteLinesDelta": 10,
+                "RelativeLinesDelta": -10,
+                "LinesOfCode": 0,
+                "LinesAdded": 0,
+                "LinesDeleted": 10
+            },
+            "src/viewer/src/views/Home.vue": {
+                "FilePath": "src/viewer/src/views/Home.vue",
+                "AbsoluteLinesDelta": 11,
+                "RelativeLinesDelta": -11,
+                "LinesOfCode": 0,
+                "LinesAdded": 0,
+                "LinesDeleted": 11
+            },
+            "src/viewer/src/views/Treemap.vue": {
+                "FilePath": "src/viewer/src/views/Treemap.vue",
+                "AbsoluteLinesDelta": 117,
+                "RelativeLinesDelta": -117,
+                "LinesOfCode": 0,
+                "LinesAdded": 0,
+                "LinesDeleted": 117
+            },
+            "src/viewer/vue.config.js": {
+                "FilePath": "src/viewer/vue.config.js",
+                "AbsoluteLinesDelta": 5,
+                "RelativeLinesDelta": -5,
+                "LinesOfCode": 0,
+                "LinesAdded": 0,
+                "LinesDeleted": 5
+            }
+        }
+    },
+    {
+        "StartTime": "2019-03-16T10:52:39Z",
+        "EndTime": "2019-03-17T10:52:39Z",
+        "Elements": {
+            "src/Visualization/index.html": {
+                "FilePath": "src/Visualization/index.html",
+                "AbsoluteLinesDelta": 15,
+                "RelativeLinesDelta": -15,
+                "LinesOfCode": 0,
+                "LinesAdded": 0,
+                "LinesDeleted": 15
+            },
+            "src/viewer/babel.config.js": {
+                "FilePath": "src/viewer/babel.config.js",
+                "AbsoluteLinesDelta": 5,
+                "RelativeLinesDelta": 5,
+                "LinesOfCode": 5,
+                "LinesAdded": 5,
+                "LinesDeleted": 0
+            },
+            "src/viewer/postcss.config.js": {
+                "FilePath": "src/viewer/postcss.config.js",
+                "AbsoluteLinesDelta": 5,
+                "RelativeLinesDelta": 5,
+                "LinesOfCode": 5,
+                "LinesAdded": 5,
+                "LinesDeleted": 0
+            },
+            "src/viewer/public/index.html": {
+                "FilePath": "src/viewer/public/index.html",
+                "AbsoluteLinesDelta": 17,
+                "RelativeLinesDelta": 17,
+                "LinesOfCode": 17,
+                "LinesAdded": 17,
+                "LinesDeleted": 0
+            },
+            "src/viewer/src/App.vue": {
+                "FilePath": "src/viewer/src/App.vue",
+                "AbsoluteLinesDelta": 46,
+                "RelativeLinesDelta": 46,
+                "LinesOfCode": 46,
+                "LinesAdded": 46,
+                "LinesDeleted": 0
+            },
+            "src/viewer/src/data/extract-data.ts": {
+                "FilePath": "src/viewer/src/data/extract-data.ts",
+                "AbsoluteLinesDelta": 1,
+                "RelativeLinesDelta": 1,
+                "LinesOfCode": 4,
+                "LinesAdded": 1,
+                "LinesDeleted": 0
+            },
+            "src/viewer/src/main.ts": {
+                "FilePath": "src/viewer/src/main.ts",
+                "AbsoluteLinesDelta": 10,
+                "RelativeLinesDelta": 10,
+                "LinesOfCode": 10,
+                "LinesAdded": 10,
+                "LinesDeleted": 0
+            },
+            "src/viewer/src/router.ts": {
+                "FilePath": "src/viewer/src/router.ts",
+                "AbsoluteLinesDelta": 33,
+                "RelativeLinesDelta": 33,
+                "LinesOfCode": 33,
+                "LinesAdded": 33,
+                "LinesDeleted": 0
+            },
+            "src/viewer/src/shims-tsx.d.ts": {
+                "FilePath": "src/viewer/src/shims-tsx.d.ts",
+                "AbsoluteLinesDelta": 17,
+                "RelativeLinesDelta": 17,
+                "LinesOfCode": 17,
+                "LinesAdded": 17,
+                "LinesDeleted": 0
+            },
+            "src/viewer/src/shims-vue.d.ts": {
+                "FilePath": "src/viewer/src/shims-vue.d.ts",
+                "AbsoluteLinesDelta": 4,
+                "RelativeLinesDelta": 4,
+                "LinesOfCode": 4,
+                "LinesAdded": 4,
+                "LinesDeleted": 0
+            },
+            "src/viewer/src/views/Dendrogram.vue": {
+                "FilePath": "src/viewer/src/views/Dendrogram.vue",
+                "AbsoluteLinesDelta": 10,
+                "RelativeLinesDelta": 10,
+                "LinesOfCode": 10,
+                "LinesAdded": 10,
+                "LinesDeleted": 0
+            },
+            "src/viewer/src/views/Home.vue": {
+                "FilePath": "src/viewer/src/views/Home.vue",
+                "AbsoluteLinesDelta": 11,
+                "RelativeLinesDelta": 11,
+                "LinesOfCode": 11,
+                "LinesAdded": 11,
+                "LinesDeleted": 0
+            },
+            "src/viewer/src/views/Tree.vue": {
+                "FilePath": "src/viewer/src/views/Tree.vue",
+                "AbsoluteLinesDelta": 123,
+                "RelativeLinesDelta": 33,
+                "LinesOfCode": 132,
+                "LinesAdded": 78,
+                "LinesDeleted": 45
+            },
+            "src/viewer/src/views/Treemap.vue": {
+                "FilePath": "src/viewer/src/views/Treemap.vue",
+                "AbsoluteLinesDelta": 117,
+                "RelativeLinesDelta": 117,
+                "LinesOfCode": 117,
+                "LinesAdded": 117,
+                "LinesDeleted": 0
+            },
+            "src/viewer/vue.config.js": {
+                "FilePath": "src/viewer/vue.config.js",
+                "AbsoluteLinesDelta": 5,
+                "RelativeLinesDelta": 5,
+                "LinesOfCode": 5,
+                "LinesAdded": 5,
+                "LinesDeleted": 0
             }
         }
     }
