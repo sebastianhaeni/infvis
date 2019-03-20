@@ -42,8 +42,7 @@ namespace GitDataExtractor.Aggregator
         {
             IDictionary<string, int> fileLinesOfCode = new Dictionary<string, int>();
 
-            HashTableIntervalGroup<File> lastIntervalGroup = intervalGroups.First();
-            foreach (HashTableIntervalGroup<File> intervalGroup in intervalGroups.Skip(1))
+            foreach (HashTableIntervalGroup<File> intervalGroup in intervalGroups)
             {
                 foreach (File file in intervalGroup.Elements.Values)
                 {
@@ -58,8 +57,6 @@ namespace GitDataExtractor.Aggregator
 
                     file.LinesOfCode = fileLinesOfCode[file.FilePath];
                 }
-
-                lastIntervalGroup = intervalGroup;
             }
         }
 
