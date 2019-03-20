@@ -8,5 +8,10 @@ indent_style = space
 indent_size = 4
 trim_trailing_whitespace = true
 
+# Code files 
+[*.{cs,csx,vb,vbx}] 
+charset = utf-8-bom
+end_of_line = crlf
+
 [*.md]
 trim_trailing_whitespace = false
