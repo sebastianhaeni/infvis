@@ -58,7 +58,8 @@ namespace GitDataExtractor.Aggregator
                         fileLinesOfCode[file.FilePath] = fileLinesOfCode[file.FilePath] + file.RelativeLinesDelta;
                     }
 
-                    file.LinesOfCode = fileLinesOfCode[file.FilePath];
+                    int loc = fileLinesOfCode[file.FilePath];
+                    file.LinesOfCode = loc < 0 ? 0 : loc;
                 }
             }
         }
