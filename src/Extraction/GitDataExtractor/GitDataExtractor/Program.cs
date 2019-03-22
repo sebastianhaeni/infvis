@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.IO;
 using GitDataExtractor.Aggregator;
 using GitDataExtractor.Miner;
@@ -22,18 +22,30 @@ namespace GitDataExtractor
 
             var storage = new JsonStorage();
 
-            int toExecute = GetValidExecutionOption();
-            switch (toExecute)
-            {
-                case 1:
-                    var extractor = new GitHistoryExtractor(storage);
-                    extractor.Run();
-                    break;
+            ExecutionLoop(storage);
+        }
 
-                case 2:
-                    var aggregator = new HistoryAggregator(storage, storage);
-                    aggregator.Execute();
-                    break;
+        private static void ExecutionLoop(JsonStorage storage)
+        {
+            Console.CancelKeyPress += new ConsoleCancelEventHandler((sender, args) => Environment.Exit(0));
+            while (true)
+            {
+                int toExecute = GetValidExecutionOption();
+                switch (toExecute)
+                {
+                    case 0:
+                        new GitHistoryExtractor(storage).Run();
+                        new HistoryAggregator(storage, storage).Execute();
+                        break;
+
+                    case 1:
+                        new GitHistoryExtractor(storage).Run();
+                        break;
+
+                    case 2:
+                        new HistoryAggregator(storage, storage).Execute();
+                        break;
+                }
             }
         }
 
@@ -41,9 +53,10 @@ namespace GitDataExtractor
         {
             while (true)
             {
+                Console.WriteLine("[0] Run both...");
                 Console.WriteLine("[1] Run Extractor...");
                 Console.WriteLine("[2] Run Aggregator...");
-                if (int.TryParse(Console.ReadLine(), out int result) && (result == 1 || result == 2))
+                if (int.TryParse(Console.ReadLine(), out int result) && (result == 0 || result == 1 || result == 2))
                 {
                     return result;
                 }

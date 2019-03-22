@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using GitDataExtractor.Miner.Abstraction;
 using GitDataExtractor.Models.Mining;
@@ -15,6 +15,8 @@ namespace GitDataExtractor.Miner
 
         public void Run()
         {
+            Console.WriteLine(nameof(GitHistoryExtractor));
+
             IEnumerable<CommitAggregate> commitAggregates = new GitClient().Get();
 
             IList<Commit> history = new List<Commit>();

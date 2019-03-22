@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using GitDataExtractor.Miner.Abstraction;
@@ -23,6 +23,8 @@ namespace GitDataExtractor.Aggregator
 
         public void Execute()
         {
+            Console.WriteLine(nameof(HistoryAggregator));
+
             // Original, the newest commit comes first but it should be reverse.
             IEnumerable<Commit> history = _historyStorage.Read().Reverse();
 
@@ -44,6 +46,7 @@ namespace GitDataExtractor.Aggregator
 
             foreach (HashTableIntervalGroup<File> intervalGroup in intervalGroups)
             {
+                Console.WriteLine(intervalGroup.StartTime.ToString("g") + " - " + intervalGroup.EndTime.ToString("g"));
                 foreach (File file in intervalGroup.Elements.Values)
                 {
                     if (!fileLinesOfCode.ContainsKey(file.FilePath))
@@ -55,7 +58,8 @@ namespace GitDataExtractor.Aggregator
                         fileLinesOfCode[file.FilePath] = fileLinesOfCode[file.FilePath] + file.RelativeLinesDelta;
                     }
 
-                    file.LinesOfCode = fileLinesOfCode[file.FilePath];
+                    int loc = fileLinesOfCode[file.FilePath];
+                    file.LinesOfCode = loc < 0 ? 0 : loc;
                 }
             }
         }
