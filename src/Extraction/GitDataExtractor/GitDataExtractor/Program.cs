@@ -9,6 +9,14 @@ namespace GitDataExtractor
 {
     internal class Program
     {
+        // If you look at this code to assess my coding skill:
+        // This should go to config! Even more, the switch case blow which uses the _byInterval boolean
+        // is just ugly. It results in code duplication (same goes for the two Execute-Methods in the HistoryAggregator).
+        // In reality I would solve this either pragmatic by extracting functions, by using polymorphism or functional programming.
+        private static TimeSpan _interval = TimeSpan.FromDays(30);
+        private const int _slices = 10;
+        private const bool _byInterval = true;
+
         private static void Main(string[] args)
         {
             IConfigurationBuilder builder = new ConfigurationBuilder()
@@ -35,7 +43,14 @@ namespace GitDataExtractor
                 {
                     case 0:
                         new GitHistoryExtractor(storage).Run();
-                        new HistoryAggregator(storage, storage).Execute();
+                        if (_byInterval)
+                        {
+                            new HistoryAggregator(storage, storage).Execute(_interval);
+                        }
+                        else
+                        {
+                            new HistoryAggregator(storage, storage).Execute(_slices);
+                        }
                         break;
 
                     case 1:
@@ -43,7 +58,14 @@ namespace GitDataExtractor
                         break;
 
                     case 2:
-                        new HistoryAggregator(storage, storage).Execute();
+                        if (_byInterval)
+                        {
+                            new HistoryAggregator(storage, storage).Execute(_interval);
+                        }
+                        else
+                        {
+                            new HistoryAggregator(storage, storage).Execute(_slices);
+                        }
                         break;
                 }
             }

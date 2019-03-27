@@ -9,8 +9,6 @@ namespace GitDataExtractor.Aggregator
 {
     public class HistoryAggregator
     {
-        private static TimeSpan _interval = TimeSpan.FromDays(1);
-
         private readonly IHistoryStorage _historyStorage;
 
         private readonly IAggregateStorage _aggregateStorage;
@@ -21,9 +19,24 @@ namespace GitDataExtractor.Aggregator
             _aggregateStorage = aggregateStorage;
         }
 
-        public void Execute()
+        public void Execute(int slices)
         {
-            Console.WriteLine(nameof(HistoryAggregator));
+            Console.WriteLine(nameof(HistoryAggregator) + "By slices");
+
+            // Original, the newest commit comes first but it should be reverse.
+            IEnumerable<Commit> history = _historyStorage.Read().Reverse();
+
+            // The last commit contains the history start date.
+            DateTime startTime = history.First().Date;
+            DateTime endTime = history.Last().Date;
+
+            TimeSpan intervalForSlices = (endTime - startTime).Divide(10);
+
+            InternalExecute(startTime, intervalForSlices, history);
+        }
+
+        public void Execute(TimeSpan interval)
+        {
 
             // Original, the newest commit comes first but it should be reverse.
             IEnumerable<Commit> history = _historyStorage.Read().Reverse();
@@ -31,7 +44,11 @@ namespace GitDataExtractor.Aggregator
             // The last commit contains the history start date.
             DateTime startTime = history.First().Date;
 
-            var commitsGroupedByInterval = new IntervalGroupedCommitCollection(startTime, _interval, history);
+            InternalExecute(startTime, interval, history);
+        }
+        private void InternalExecute(DateTime startTime, TimeSpan interval, IEnumerable<Commit> history)
+        {
+            var commitsGroupedByInterval = new IntervalGroupedCommitCollection(startTime, interval, history);
 
             LinkedList<HashTableIntervalGroup<File>> intervalGroups = GetFilesPerInterval(commitsGroupedByInterval);
 
@@ -98,9 +115,6 @@ namespace GitDataExtractor.Aggregator
             return intervalGroups;
         }
 
-        private bool IncludeFile(string fullName)
-        {
-            return Configuration.Instance.FileExtensionsToInclude.Any(f => System.IO.Path.GetExtension(fullName) == f);
-        }
+        private bool IncludeFile(string fullName) => Configuration.Instance.FileExtensionsToInclude.Any(f => System.IO.Path.GetExtension(fullName) == f);
     }
 }
