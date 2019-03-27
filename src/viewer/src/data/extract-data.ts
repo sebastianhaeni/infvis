@@ -33,5 +33,6 @@ export function extractData(samples) {
                 });
             });
     });
+    console.log(data);
     return data;
 }
