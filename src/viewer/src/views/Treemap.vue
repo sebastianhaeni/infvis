@@ -98,7 +98,7 @@
                 .padding(1)
                 .round(true);
 
-            d3.json("git-aggregate.json").then((data: { Elements: { [index: string]: Datum } }[]) => {
+            d3.json("aggregate.json").then((data: { Elements: { [index: string]: Datum } }[]) => {
                 this.data = data;
                 this.draw();
             });
