@@ -1,7 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Home from './views/Home.vue';
-import Tree from './views/Tree.vue';
 import Treemap from './views/Treemap.vue';
 import Dendrogram from './views/Dendrogram.vue';
 
@@ -15,13 +14,8 @@ export default new Router({
             component: Home,
         },
         {
-            path: '/tree',
-            name: 'tree',
-            component: Tree,
-        },
-        {
             path: '/treemap',
-            name: 'treema',
+            name: 'treemap',
             component: Treemap,
         },
         {

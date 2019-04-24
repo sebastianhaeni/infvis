@@ -3,8 +3,6 @@
         <div id="nav">
             <router-link to="/">Home</router-link>
             |
-            <router-link to="/tree">Tree</router-link>
-            |
             <router-link to="/treemap">Treemap</router-link>
             |
             <router-link to="/dendrogram">Dendrogram</router-link>

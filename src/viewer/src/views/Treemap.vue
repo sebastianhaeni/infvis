@@ -33,7 +33,7 @@
 <script lang="ts">
     import {Component, Vue} from 'vue-property-decorator';
     import * as d3 from "d3";
-    import {HierarchyNode} from "d3";
+    import {HierarchyNode, Nest} from "d3";
 
     type Datum = {
         FilePath: string,
@@ -44,6 +44,7 @@
 
         parent?: Datum,
         _children?: Datum[],
+        dir?: string[],
     };
 
     @Component
@@ -53,9 +54,9 @@
         private depth = 2;
 
         public timestamp = '';
-        private data: { Elements: { [index: string]: Datum } }[] = [];
+        private data: { EndTime: string, Elements: { [index: string]: Datum } }[] = [];
         private timesliceProgress: number = 0;
-        private nest;
+        private nest: Nest<Datum, any>;
         private treemap;
         private isPlaying = false;
         private format = d3.formatLocale({
@@ -98,7 +99,7 @@
                 .padding(1)
                 .round(true);
 
-            d3.json("aggregate.json").then((data: { Elements: { [index: string]: Datum } }[]) => {
+            d3.json("aggregate.json").then((data: any[]) => {
                 this.data = data;
                 this.draw();
             });
@@ -148,7 +149,7 @@
 
             const values = this.nest.entries(timeslice);
             const root = d3.hierarchy({values}, d => d.values)
-                .sum(d => d.value ? d.value.total : 0)
+                .sum((d: any) => d.value ? d.value.total : 0)
                 .sort((a, b) => b.value - a.value);
 
             this.treemap(root);
@@ -162,17 +163,17 @@
                 .enter()
                 .append("div")
                 .attr("class", "node")
-                .style("left", d => d.x0 + "px")
-                .style("top", d => d.y0 + topPadding + "px")
-                .style("width", d => d.x1 - d.x0 + "px")
-                .style("height", d => d.y1 - d.y0 + "px")
-                .attr('title', d => this.getNodeText(d))
-                .style("background-color", d => this.getRGBABackground(d));
+                .style("left", (d: any) => d.x0 + "px")
+                .style("top", (d: any) => d.y0 + topPadding + "px")
+                .style("width", (d: any) => d.x1 - d.x0 + "px")
+                .style("height", (d: any) => d.y1 - d.y0 + "px")
+                .attr('title', d => this.getNodeText(d as any))
+                .style("background-color", d => this.getRGBABackground(d as any));
 
             // add label
             node.append("div")
                 .attr("class", "node-label")
-                .text(d => this.getNodeText(d));
+                .text(d => this.getNodeText(d as any));
 
             if (!this.debug) {
                 return;
@@ -186,15 +187,15 @@
             // add delta
             node.append("div")
                 .attr("class", "node-delta")
-                .text(d => `Lines changed: ${d.data.value.change}`);
+                .text((d: any) => `Lines changed: ${d.data.value.change}`);
         }
 
-        private getRGBABackground(d: HierarchyNode): string {
+        private getRGBABackground(d: HierarchyNode<{ value: { change: number } }>): string {
             const alpha = Math.min(d.data.value.change, 1000) / 1000;
             return 'rgba(255, 0, 0, ' + alpha + ')';
         }
 
-        private getNodeText(d: HierarchyNode): string {
+        private getNodeText(d: HierarchyNode<{ key: string }>): string {
             let text = d.data.key && d.data.key !== 'undefined' ? d.data.key : '';
             while (d.parent && d.parent.data.key) {
                 if (d.parent.data.key !== 'undefined') {
