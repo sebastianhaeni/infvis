@@ -99,7 +99,7 @@
                 .padding(1)
                 .round(true);
 
-            d3.json("aggregate.json").then((data: any[]) => {
+            d3.json(process.env.VUE_APP_DATA_URL).then((data: any[]) => {
                 this.data = data;
                 this.draw();
             });
