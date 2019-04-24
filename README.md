@@ -1,4 +1,4 @@
-# InfVis - Information Visualization [![Build status](https://sallin.visualstudio.com/DocumentQuickAccess/_apis/build/status/DocumentQuickAccess-CI)](https://sallin.visualstudio.com/DocumentQuickAccess/_build/latest?definitionId=2)
+# InfVis - Information Visualization [![Build Status](https://dev.azure.com/marcsallin/InfVis/_apis/build/status/InfVis-CI?branchName=master)](https://dev.azure.com/marcsallin/InfVis/_build/latest?definitionId=3&branchName=master)
 
 Information Visualization of a large code base
 
