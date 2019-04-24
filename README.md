@@ -1,7 +1,4 @@
----
-permalink: /index.html
----
-# InfVis - Information Visualization
+# InfVis - Information Visualization [![Build status](https://sallin.visualstudio.com/DocumentQuickAccess/_apis/build/status/DocumentQuickAccess-CI)](https://sallin.visualstudio.com/DocumentQuickAccess/_build/latest?definitionId=2)
 
 Information Visualization of a large code base
 
