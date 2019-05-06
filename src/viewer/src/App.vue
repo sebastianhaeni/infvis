@@ -4,8 +4,6 @@
             <router-link to="/">Home</router-link>
             |
             <router-link to="/treemap">Treemap</router-link>
-            |
-            <router-link to="/dendrogram">Dendrogram</router-link>
         </div>
         <router-view/>
     </div>
@@ -20,7 +18,7 @@
     }
 
     #app {
-        min-height: calc(100% - 30px);
+        min-height: 100%;
         min-width: 100%;
         font-family: 'Avenir', Helvetica, Arial, sans-serif;
         -webkit-font-smoothing: antialiased;

@@ -11,20 +11,8 @@
                    max="100"
                    step="1"
                    v-model="timesliceProgress"
-                   @input="updateTimeslice()">
-            <label style="position: absolute; top: 30px; right: 30px">
-                <input type="checkbox" v-model="debug">
-                Display debug information
-            </label>
-            <label style="position: absolute; top: 55px; right: 30px">
-                Depth {{depth}}:
-                <input type="range"
-                       min="1"
-                       max="5"
-                       step="1"
-                       v-model="depth"
-                       @input="doNest() || updateTimeslice()">
-            </label>
+                   @change="updateTimeslice()"
+                   @input="updateTimestamp()">
         </div>
         <div id="chart"></div>
     </section>
@@ -32,39 +20,18 @@
 
 <script lang="ts">
     import {Component, Vue} from 'vue-property-decorator';
-    import * as d3 from "d3";
-    import {HierarchyNode, Nest} from "d3";
+    import {treemap} from './treemap.support';
 
-    type Datum = {
-        FilePath: string,
-        LinesAdded: number,
-        LinesDeleted: number,
-        LinesOfCode: number,
-        RelativeLinesDelta: number,
-
-        parent?: Datum,
-        _children?: Datum[],
-        dir?: string[],
-    };
+    declare const d3: any;
 
     @Component
     export default class Treemap extends Vue {
 
-        private debug = false;
-        private depth = 2;
-
-        public timestamp = '';
-        private data: { EndTime: string, Elements: { [index: string]: Datum } }[] = [];
+        public timestamp = 'loading...';
+        private data: { EndTime: string, Elements: { [index: string]: any } }[] = [];
         private timesliceProgress: number = 0;
-        private nest: Nest<Datum, any>;
-        private treemap;
         private isPlaying = false;
-        private format = d3.formatLocale({
-            decimal: ".",
-            thousands: ",",
-            grouping: [3],
-            currency: ["CHF", ""]
-        }).format("d");
+        private domain: string[] = [];
 
         startPlaying() {
             this.isPlaying = true;
@@ -77,7 +44,7 @@
             }
             this.timesliceProgress = (this.timesliceProgress += 1) % 100;
             this.draw();
-            setTimeout(() => this.advanceTime(), 200);
+            setTimeout(() => this.advanceTime(), 800);
         }
 
         pausePlaying() {
@@ -88,44 +55,40 @@
             this.draw()
         }
 
+        updateTimestamp() {
+            const end = this.getDataIndex();
+            this.timestamp = this.data[end - 1].EndTime;
+        }
+
         mounted() {
-            const width = this.$el.clientWidth;
-            const height = this.$el.clientHeight;
+            d3.json(process.env.VUE_APP_DATA_URL, (err, res) => {
+                if (err) {
+                    return;
+                }
 
-            this.doNest();
+                this.data = res;
 
-            this.treemap = d3.treemap()
-                .size([width, height])
-                .padding(1)
-                .round(true);
+                this.domain = this.data
+                    .flatMap(d => Object.values(d.Elements))
+                    .map(val => val.FilePath.split('/').flatMap(p => p.split('.'))[0])
+                    .filter((value, index, self) => self.indexOf(value) === index)
+                    .filter(Boolean)
+                    .sort();
 
-            d3.json(process.env.VUE_APP_DATA_URL).then((data: any[]) => {
-                this.data = data;
+                this.updateTimestamp();
                 this.draw();
             });
         }
 
-        private doNest() {
-            this.nest = d3.nest();
-
-            for (let i = 0; i < this.depth; i++) {
-                this.nest = this.nest.key(d => d.dir[i]);
-            }
-
-            this.nest.rollup(d => ({
-                total: d3.sum(d, d => d.LinesOfCode),
-                change: d3.sum(d, d => Math.abs(d.RelativeLinesDelta)),
-            }));
-        }
-
         private draw() {
             this.$el.children[this.$el.children.length - 1].innerHTML = '';
-            const end = Math.max(Math.round((this.data.length / 100) * this.timesliceProgress), 1);
-            this.timestamp = this.data[end - 1].EndTime;
+
+            const end = this.getDataIndex();
 
             const all = this.data.slice(0, end)
                 .map(d => d.Elements)
                 .reduce((a, b, i) => {
+                    // aggregate time slices and remove deleted files
                     const resetDelta = i + 1 < end;
                     Object.entries(b).forEach(entry => {
                         if (entry[1].LinesOfCode === 0) {
@@ -142,98 +105,222 @@
                     return a;
                 }, {});
 
-            const timeslice = Object.values(all).map(entry => ({
-                dir: entry.FilePath.replace('.cs', '').split(/[\/.]/),
-                ...entry
-            }));
+            const mappedResponse = Object.keys(all)
+                .map(path => {
+                    // map to intermediary tree map structure
+                    let parts = path.split('/').flatMap(p => p.split(/\.(?!cs$)/));
+                    const region = parts[0];
+                    const subregion = parts[1];
+                    const key = parts[2];
+                    return {
+                        key: key || subregion || region,
+                        region: region,
+                        subregion: subregion || region,
+                        value: all[path].LinesOfCode,
+                        delta: Math.abs(all[path].RelativeLinesDelta),
+                    };
+                })
+                .reduce((acc, current) => {
+                    // aggregate everything with depth > 3
+                    const existing = acc.find(val => {
+                        return val.key === current.key && val.region === current.region && val.subregion === current.subregion;
+                    });
+                    if (existing) {
+                        existing.value += current.value;
+                        existing.delta += current.delta
+                    } else {
+                        acc.push(current);
+                    }
+                    return acc;
+                }, []);
 
-            const values = this.nest.entries(timeslice);
-            const root = d3.hierarchy({values}, d => d.values)
-                .sum((d: any) => d.value ? d.value.total : 0)
-                .sort((a, b) => b.value - a.value);
+            const data = d3.nest()
+                .key(d => d.region)
+                .key(d => d.subregion)
+                .entries(mappedResponse);
 
-            this.treemap(root);
-
-            const topPadding = 130;
-
-            // add node
-            const node = d3.select(this.$el.children[this.$el.children.length - 1])
-                .selectAll(".node")
-                .data(root.leaves())
-                .enter()
-                .append("div")
-                .attr("class", "node")
-                .style("left", (d: any) => d.x0 + "px")
-                .style("top", (d: any) => d.y0 + topPadding + "px")
-                .style("width", (d: any) => d.x1 - d.x0 + "px")
-                .style("height", (d: any) => d.y1 - d.y0 + "px")
-                .attr('title', d => this.getNodeText(d as any))
-                .style("background-color", d => this.getRGBABackground(d as any));
-
-            // add label
-            node.append("div")
-                .attr("class", "node-label")
-                .text(d => this.getNodeText(d as any));
-
-            if (!this.debug) {
-                return;
-            }
-
-            // add value
-            node.append("div")
-                .attr("class", "node-value")
-                .text(d => `Total lines: ${this.format(d.value)}`);
-
-            // add delta
-            node.append("div")
-                .attr("class", "node-delta")
-                .text((d: any) => `Lines changed: ${d.data.value.change}`);
+            treemap({}, {key: "Root", values: data}, this.domain);
         }
 
-        private getRGBABackground(d: HierarchyNode<{ value: { change: number } }>): string {
-            const alpha = Math.min(d.data.value.change, 1000) / 1000;
-            return 'rgba(255, 0, 0, ' + alpha + ')';
+        private getDataIndex() {
+            return Math.max(Math.round((this.data.length / 100) * this.timesliceProgress), 1);
         }
 
-        private getNodeText(d: HierarchyNode<{ key: string }>): string {
-            let text = d.data.key && d.data.key !== 'undefined' ? d.data.key : '';
-            while (d.parent && d.parent.data.key) {
-                if (d.parent.data.key !== 'undefined') {
-                    let separator = text.length > 0 ? '/' : '';
-                    text = d.parent.data.key + separator + text;
+        /*private doNest() {
+                    this.nest = d3.nest();
+
+                    for (let i = 0; i < this.depth; i++) {
+                        this.nest = this.nest.key(d => d.dir[i]);
+                    }
+
+                    this.nest.rollup(d => ({
+                        total: d3.sum(d, d => d.LinesOfCode),
+                        change: d3.sum(d, d => Math.abs(d.RelativeLinesDelta)),
+                    }));
                 }
-                d = d.parent;
-            }
-            return text;
-        }
+
+                private draw() {
+                    this.$el.children[this.$el.children.length - 1].innerHTML = '';
+                    const end = Math.max(Math.round((this.data.length / 100) * this.timesliceProgress), 1);
+                    this.timestamp = this.data[end - 1].EndTime;
+
+                    const all = this.data.slice(0, end)
+                        .map(d => d.Elements)
+                        .reduce((a, b, i) => {
+                            const resetDelta = i + 1 < end;
+                            Object.entries(b).forEach(entry => {
+                                if (entry[1].LinesOfCode === 0) {
+                                    // file deleted => we delete it from our map
+                                    delete a[entry[0]];
+                                } else {
+                                    if (resetDelta) {
+                                        // the current slice is not relevant for delta lines
+                                        entry[1].RelativeLinesDelta = 0;
+                                    }
+                                    a[entry[0]] = entry[1];
+                                }
+                            });
+                            return a;
+                        }, {});
+
+                    const timeslice = Object.values(all).map(entry => ({
+                        dir: entry.FilePath.replace('.cs', '').split(/[\/.]/),
+                        ...entry
+                    }));
+
+                    const values = this.nest.entries(timeslice);
+                    const root = d3.hierarchy({values}, d => d.values)
+                        .sum((d: any) => d.value ? d.value.total : 0)
+                        .sort((a, b) => b.value - a.value);
+
+                    this.treemap(root);
+
+                    const topPadding = 130;
+
+                    // add clusters
+                    const cluster = d3.select(this.$el.children[this.$el.children.length - 1])
+                        .selectAll('.cluster')
+                        .data(root.children)
+                        .enter()
+                        .append('div')
+                        .attr('class', 'cluster')
+                        .style("left", (d: any) => d.x0 + "px")
+                        .style("top", (d: any) => d.y0 + topPadding + "px")
+                        .style("width", (d: any) => d.x1 - d.x0 + "px")
+                        .style("height", (d: any) => d.y1 - d.y0 + "px")
+                        .attr('title', d => this.getNodeText(d as any));
+
+                    const node = cluster.selectAll('.node')
+                        .data((d: any) => d._children || [d])
+                        .enter()
+                        .append("div")
+                        .attr("class", "node")
+                        .style("left", (d: any) => d.x0 + "px")
+                        .style("top", (d: any) => d.y0 + topPadding + "px")
+                        .style("width", (d: any) => d.x1 - d.x0 + "px")
+                        .style("height", (d: any) => d.y1 - d.y0 + "px")
+                        .attr('title', d => this.getNodeText(d as any))
+                        .style("background-color", d => this.getRGBABackground(d as any));
+
+                    // add node
+                    /!* const node = d3.select(this.$el.children[this.$el.children.length - 1])
+                         .selectAll(".node")
+                         .data(root.leaves())
+                         .enter()
+                         .append("div")
+                         .attr("class", "node")
+                         .style("left", (d: any) => d.x0 + "px")
+                         .style("top", (d: any) => d.y0 + topPadding + "px")
+                         .style("width", (d: any) => d.x1 - d.x0 + "px")
+                         .style("height", (d: any) => d.y1 - d.y0 + "px")
+                         .attr('title', d => this.getNodeText(d as any))
+                         .style("background-color", d => this.getRGBABackground(d as any));*!/
+
+                    // add label
+                    node.append("div")
+                        .attr("class", "node-label")
+                        .text(d => this.getNodeText(d as any));
+
+                    if (!this.debug) {
+                        return;
+                    }
+
+                    // add value
+                    node.append("div")
+                        .attr("class", "node-value")
+                        .text(d => `Total lines: ${this.format(d.value)}`);
+
+                    // add delta
+                    node.append("div")
+                        .attr("class", "node-delta")
+                        .text((d: any) => `Lines changed: ${d.data.value.change}`);
+                }
+
+                private getRGBABackground(d: HierarchyNode<{ value: { change: number } }>): string {
+                    const alpha = Math.min(d.data.value.change, 1000) / 1000;
+                    return 'rgba(255, 0, 0, ' + alpha + ')';
+                }*/
+
     }
 </script>
 
 <style lang="scss">
-
     #chart {
-        min-height: calc(100vh - (2 * 30px));
-        min-width: 100%;
+        background: #fff;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        min-height: calc(100vh - 129px)
     }
 
-    .node {
-        box-sizing: border-box;
-        line-height: 1em;
-        overflow: hidden;
-        position: absolute;
-        white-space: pre;
-        border: 1px solid #ddd;
+    .title {
+        font-weight: bold;
+        font-size: 24px;
+        text-align: center;
+        margin-top: 6px;
+        margin-bottom: 6px;
+    }
 
-        &-label,
-        &-value,
-        &-delta {
-            margin: 4px;
-        }
+    text {
+        pointer-events: none;
+    }
 
-        &-value {
-            margin-top: -2px;
-            font-weight: bold;
-        }
+    .grandparent text {
+        font-weight: bold;
+    }
+
+    rect {
+        fill: none;
+        stroke: #fff;
+    }
+
+    rect.parent,
+    .grandparent rect {
+        stroke-width: 2px;
+    }
+
+    rect.parent {
+        pointer-events: none;
+    }
+
+    .grandparent rect {
+        fill: orange;
+    }
+
+    .grandparent:hover rect {
+        fill: #ee9700;
+    }
+
+    .children rect.parent,
+    .grandparent rect {
+        cursor: pointer;
+    }
+
+    .children rect.parent {
+        fill: #bbb;
+        fill-opacity: .2;
+    }
+
+    .children:hover rect.child {
+        fill: #bbb;
     }
 
     .timeslice-range {
