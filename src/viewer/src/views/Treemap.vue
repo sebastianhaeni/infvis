@@ -43,6 +43,7 @@
                 return;
             }
             this.timesliceProgress = (this.timesliceProgress += 1) % 100;
+            this.updateTimestamp();
             this.draw();
             setTimeout(() => this.advanceTime(), 800);
         }
