@@ -1,6 +1,5 @@
 <template>
     <section>
-        <h1>Home</h1>
         <div class="wrapper">
             <canvas id="chart"></canvas>
         </div>
