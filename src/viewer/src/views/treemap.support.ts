@@ -161,8 +161,8 @@ export function treemap(o, data, domain) {
                 const dots = [
                     [1, 20],
                     [21, 200],
-                    [201, 1000],
-                    [1001, Infinity],
+                    [201, 2000],
+                    [2001, Infinity],
                 ];
                 const changes = getDelta(d);
                 const index = dots.findIndex((dot) => changes >= dot[0] && changes <= dot[1]);

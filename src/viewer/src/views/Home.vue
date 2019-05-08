@@ -48,11 +48,11 @@
                     }, {});
                 totalLines.push(Object.values<any>(all).reduce((acc, el) => acc + el.LinesOfCode, 0))
             }
-            let changedLines = elements.map(slice => slice.reduce((acc, el) => acc + el.RelativeLinesDelta, 0));
+            let changedLines = elements.map(slice => slice.reduce((acc, el) => acc + Math.abs(el.RelativeLinesDelta), 0));
 
             const presets = {
                 red: 'rgb(255, 99, 132)',
-                orange: 'rgb(255, 159, 64)',
+                orange: 'rgb(255, 160, 66)',
                 yellow: 'rgb(255, 205, 86)',
                 green: 'rgb(75, 192, 192)',
                 blue: 'rgb(54, 162, 235)',
@@ -96,23 +96,25 @@
                 data: {
                     labels: timestamp,
                     datasets: [{
-                        backgroundColor: this.transparentize(presets.blue),
-                        borderColor: presets.blue,
-                        data: totalLines,
-                        label: 'Total lines',
-                        fill: 'start'
-                    }, {
-                        backgroundColor: this.transparentize(presets.red),
-                        borderColor: presets.red,
+                        backgroundColor: this.transparentize(presets.purple),
+                        borderWidth: 0,
                         data: changedLines,
                         label: 'Changed lines',
-                        fill: 'start'
+                        fill: 'start',
+                        pointRadius: 0
+                    }, {
+                        backgroundColor: this.transparentize(presets.blue),
+                        borderWidth: 0,
+                        data: totalLines,
+                        label: 'Total lines',
+                        fill: 'start',
+                        pointRadius: 0
                     }]
                 },
                 options: Chart.helpers.merge(options, {
                     elements: {
                         line: {
-                            tension: 0.4
+                            tension: 0
                         }
                     },
                     scales: {
@@ -120,11 +122,16 @@
                             type: 'time',
                             time: {
                                 parser: timeFormat,
-                                // round: 'day'
                                 tooltipFormat: 'll HH:mm'
                             },
+                            gridLines: false,
                         }],
-                        yAxes: [{}]
+                        yAxes: [{
+                            gridLines: false,
+                            ticks: {
+                                callback: value => value.toLocaleString()
+                            }
+                        }]
                     },
                     tooltips: {
                         mode: 'index', // tooltips are always activated on hover and point to all datapoints in the week
@@ -135,7 +142,7 @@
         }
 
         transparentize(color, opacity?) {
-            const alpha = opacity === undefined ? 0.5 : 1 - opacity;
+            const alpha = opacity === undefined ? .8 : 1 - opacity;
             return Color(color).alpha(alpha).rgbString();
         }
 
