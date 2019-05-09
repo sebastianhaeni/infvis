@@ -92,15 +92,16 @@
                     // aggregate time slices and remove deleted files
                     const resetDelta = i + 1 < end;
                     Object.entries(b).forEach(entry => {
-                        if (entry[1].LinesOfCode === 0) {
+                        const file = {...entry[1]};
+                        if (file.LinesOfCode === 0) {
                             // file deleted => we delete it from our map
                             delete a[entry[0]];
                         } else {
                             if (resetDelta) {
                                 // the current slice is not relevant for delta lines
-                                entry[1].RelativeLinesDelta = 0;
+                                file.RelativeLinesDelta = 0;
                             }
-                            a[entry[0]] = entry[1];
+                            a[entry[0]] = file;
                         }
                     });
                     return a;
