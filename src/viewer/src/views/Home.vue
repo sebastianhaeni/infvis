@@ -1,5 +1,6 @@
 <template>
     <section>
+        <p v-if="loading">loading...</p>
         <div class="wrapper">
             <canvas id="chart"></canvas>
         </div>
@@ -15,12 +16,14 @@
     @Component
     export default class Home extends Vue {
 
+        loading = true;
         inputs: any;
 
         async mounted() {
 
             const response = await fetch(process.env.VUE_APP_DATA_URL);
             const data = await response.json();
+            this.loading = false;
             let timestamp = data.map(d => new Date(d.StartTime));
             let elements = Object.values<any>(data).map(d => Object.values<any>(d.Elements));
             let totalLines = [];

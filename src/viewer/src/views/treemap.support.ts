@@ -138,11 +138,16 @@ export function treemap(o, data, domain) {
             .enter()
             .append('g');
 
+        function getTitle(d) {
+            return `${d.key} (${formatNumber(d.value)} lines total, ${formatNumber(getDelta(d))} lines changed)`;
+        }
+
         children.append('rect')
             .attr('class', 'child')
+            .attr('title', d => getTitle(d))
             .call(rect)
             .append('title')
-            .text(d => d.key + ' (' + formatNumber(d.value) + ')');
+            .text(d => getTitle(d));
 
         g.append('rect')
             .attr('class', 'parent')
@@ -189,7 +194,12 @@ export function treemap(o, data, domain) {
                 return color(parent(d).key);
             });
 
-        function transition(d) {
+        $('.child').tooltipster({
+            delay: 0,
+            side: 'bottom',
+        });
+
+        function transition(d?) {
             if (transitioning || !d) {
                 return;
             }
