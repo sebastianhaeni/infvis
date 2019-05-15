@@ -2,6 +2,10 @@
 
 Information Visualization of a large code base
 
+### Disclaimer
+
+> The code in this repository is not up to our professional standards. It was hacked together in a short time period and just about works.
+
 ## Abstract
 
 Software maintenance/evolution activities are supported by providing a visual development activity hotspot analysis for software components. The activities are gathered from a version control system. The pipeline is pluggable and consists of the steps “Extraction”, “Aggregation”, “Visualization”. The resulting visualization is an interactive website, showing the overall activity as well as the evolution of the system components over time.
