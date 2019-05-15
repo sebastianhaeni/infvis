@@ -111,41 +111,21 @@
                 .map(path => {
                     // map to intermediary tree map structure
                     let parts = path.split('/').flatMap(p => p.split(/\.(?![a-z]+$)/));
-                    const region = parts[0];
-                    const subregion = parts[1];
-                    const component = parts[2];
-                    const key = parts[3];
                     return {
-                        key: key || component || subregion || region,
-                        region: region,
-                        subregion: subregion || region,
-                        component: component || subregion || region,
+                        key: parts[parts.length - 1],
+                        parts: parts,
                         value: all[path].LinesOfCode,
                         delta: Math.abs(all[path].RelativeLinesDelta),
                     };
-                })
-                .reduce((acc, current) => {
-                    // aggregate everything with depth > 3
-                    const existing = acc.find(val => {
-                        return val.key === current.key
-                         && val.region === current.region 
-                         && val.subregion === current.subregion
-                         && val.component === current.component;
-                    });
-                    if (existing) {
-                        existing.value += current.value;
-                        existing.delta += current.delta
-                    } else {
-                        acc.push(current);
-                    }
-                    return acc;
-                }, []);
+                });
 
-            const data = d3.nest()
-                .key(d => d.region)
-                .key(d => d.subregion)
-                .key(d => d.component)
-                .entries(mappedResponse);
+            let data = d3.nest();
+
+            for(let i = 0; i < 10; i++) {
+                data = data.key(d => d.parts[i]);
+            }
+
+            data = data.entries(mappedResponse);
 
             treemap({}, {key: "Root", values: data}, this.domain);
         }

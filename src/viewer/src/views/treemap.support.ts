@@ -139,7 +139,11 @@ export function treemap(o, data, domain) {
             .append('g');
 
         function getTitle(d) {
-            return `${d.key} (${formatNumber(d.value)} lines total, ${formatNumber(getDelta(d))} lines changed)`;
+            return `${getName(d)} (${formatNumber(d.value)} lines total, ${formatNumber(getDelta(d))} lines changed)`;
+        }
+
+        function getName(d) {
+            return !d.parts ? d.key : d.parts[d.parts.length - 1];
         }
 
         children.append('rect')
@@ -157,7 +161,7 @@ export function treemap(o, data, domain) {
             .attr('dy', '.75em');
 
         t.append('tspan')
-            .text(d => d.key);
+            .text(d => getName(d));
         t.call(text);
 
         const changeDots = g.selectAll('.changed')
