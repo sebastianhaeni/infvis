@@ -3,7 +3,7 @@ declare const $: any;
 
 export function treemap(o, data, domain) {
     const defaults = {
-        margin: {top: 24, right: 0, bottom: 0, left: 0},
+        margin: { top: 24, right: 0, bottom: 0, left: 0 },
         rootname: 'TOP',
         format: ',d',
         title: '',
@@ -12,7 +12,7 @@ export function treemap(o, data, domain) {
     };
 
     let root;
-    const opts = {...defaults, ...o};
+    const opts = { ...defaults, ...o };
     const formatNumber = d3.format(opts.format);
     const rname = opts.rootname;
     const margin = opts.margin;
@@ -65,7 +65,7 @@ export function treemap(o, data, domain) {
         .attr('dy', '.75em');
 
     if (data instanceof Array) {
-        root = {key: rname, values: data};
+        root = { key: rname, values: data };
     } else {
         root = data;
     }
@@ -101,7 +101,7 @@ export function treemap(o, data, domain) {
     // coordinates. This lets us use a viewport to zoom.
     function layout(d) {
         if (d._children) {
-            treemap.nodes({_children: d._children});
+            treemap.nodes({ _children: d._children });
             d._children.forEach(c => {
                 c.x = d.x + c.x * d.dx;
                 c.y = d.y + c.y * d.dy;
@@ -143,7 +143,7 @@ export function treemap(o, data, domain) {
         }
 
         function getName(d) {
-            return !d.parts ? d.key : d.parts[d.parts.length - 1];
+            return d.key === 'undefined' ? d.parent.key : d.key;
         }
 
         children.append('rect')
@@ -175,7 +175,7 @@ export function treemap(o, data, domain) {
                 const changes = getDelta(d);
                 const index = dots.findIndex((dot) => changes >= dot[0] && changes <= dot[1]);
                 const changeDots = index >= 0 ? index + 1 : 0;
-                return Array(changeDots).fill(null).map((n, i) => ({d, i}));
+                return Array(changeDots).fill(null).map((n, i) => ({ d, i }));
             })
             .enter()
             .append('g');
@@ -203,9 +203,14 @@ export function treemap(o, data, domain) {
         });
 
         function transition(d?) {
+            if (!d.values.every(val => val.key !== 'undefined')) {
+                return;
+            }
+
             if (transitioning || !d) {
                 return;
             }
+
             transitioning = true;
 
             currentDepth = currentDepth === 0 ? 1 : currentDepth === 1 ? (d.depth === 0 ? 0 : 2) : 1;
