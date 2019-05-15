@@ -110,14 +110,16 @@
             const mappedResponse = Object.keys(all)
                 .map(path => {
                     // map to intermediary tree map structure
-                    let parts = path.split('/').flatMap(p => p.split(/\.(?!cs$)/));
+                    let parts = path.split('/').flatMap(p => p.split(/\.(?![a-z]+$)/));
                     const region = parts[0];
                     const subregion = parts[1];
-                    const key = parts[2];
+                    const component = parts[2];
+                    const key = parts[3];
                     return {
-                        key: key || subregion || region,
+                        key: key || component || subregion || region,
                         region: region,
                         subregion: subregion || region,
+                        component: component || subregion || region,
                         value: all[path].LinesOfCode,
                         delta: Math.abs(all[path].RelativeLinesDelta),
                     };
@@ -125,7 +127,10 @@
                 .reduce((acc, current) => {
                     // aggregate everything with depth > 3
                     const existing = acc.find(val => {
-                        return val.key === current.key && val.region === current.region && val.subregion === current.subregion;
+                        return val.key === current.key
+                         && val.region === current.region 
+                         && val.subregion === current.subregion
+                         && val.component === current.component;
                     });
                     if (existing) {
                         existing.value += current.value;
@@ -139,6 +144,7 @@
             const data = d3.nest()
                 .key(d => d.region)
                 .key(d => d.subregion)
+                .key(d => d.component)
                 .entries(mappedResponse);
 
             treemap({}, {key: "Root", values: data}, this.domain);
