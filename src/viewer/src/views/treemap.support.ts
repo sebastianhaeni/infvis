@@ -144,7 +144,6 @@ export function treemap(o, data, domain) {
 
         children.append('rect')
             .attr('class', 'child')
-            .attr('title', d => getTitle(d))
             .call(rect)
             .append('title')
             .text(d => getTitle(d));
