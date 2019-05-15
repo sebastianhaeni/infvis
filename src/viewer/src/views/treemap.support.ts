@@ -203,11 +203,10 @@ export function treemap(o, data, domain) {
         });
 
         function transition(d?) {
-            if (!d.values.every(val => val.key !== 'undefined')) {
+            if (transitioning || !d) {
                 return;
             }
-
-            if (transitioning || !d) {
+            if (!d.values.every(val => val.key !== 'undefined')) {
                 return;
             }
 
