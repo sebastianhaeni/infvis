@@ -1,5 +1,4 @@
-# InfVis - Information Visualization [![Build Status](https://dev.azure.com/marcsallin/InfVis/_apis/build/status/InfVis-CI?branchName=master)](https://dev.azure.com/marcsallin/InfVis/_build/latest?definitionId=3&branchName=master)
-
+# InfVis - Information Visualization
 Information Visualization of a large code base
 
 ### Disclaimer
